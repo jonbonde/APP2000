@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonas\\source\\repos\\APP2000Prosjekt\\app2000\\app2000.csproj": {}
+    "C:\\Users\\jhdan\\repositories\\APP2000\\app2000\\app2000.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonas\\source\\repos\\APP2000Prosjekt\\app2000\\app2000.csproj": {
+    "C:\\Users\\jhdan\\repositories\\APP2000\\app2000\\app2000.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\source\\repos\\APP2000Prosjekt\\app2000\\app2000.csproj",
+        "projectUniqueName": "C:\\Users\\jhdan\\repositories\\APP2000\\app2000\\app2000.csproj",
         "projectName": "app2000",
-        "projectPath": "C:\\Users\\jonas\\source\\repos\\APP2000Prosjekt\\app2000\\app2000.csproj",
-        "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\source\\repos\\APP2000Prosjekt\\app2000\\obj\\",
+        "projectPath": "C:\\Users\\jhdan\\repositories\\APP2000\\app2000\\app2000.csproj",
+        "packagesPath": "C:\\Users\\jhdan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jhdan\\repositories\\APP2000\\app2000\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
