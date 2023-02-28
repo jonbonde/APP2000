@@ -4,7 +4,7 @@ import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import Markedsplass from "./Pages/Markedsplass";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -17,5 +17,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
