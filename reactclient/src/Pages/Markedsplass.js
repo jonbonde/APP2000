@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Constants from "../Utilities/Constants";
 import LagInnlegg from "./LagInnlegg";
+import OppdaterInnlegg from "./OppdaterInnlegg";
 
 export default function Markedsplass() {
   const [posts, setPosts] = useState({});
   const [showingCreateNewPostForm, setShowingCreateNewPostForm] = useState(false);
+  const [postCurrentlyBeingUpdated, setPostCurrentlyBeingUpdated] = useState(null);
 
   function getPosts() {
     const url = Constants.API_URL_GET_ALL_POSTS;
@@ -22,11 +24,28 @@ export default function Markedsplass() {
       });
   }
 
+  function deletePost(postId) {
+    const url = `${Constants.API_URL_DELETE_POST_BY_ID}/${postId}`;
+
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((responseFromServer) => {
+        console.log(responseFromServer);
+        onPostDeleted(postId);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+      });
+  }
+
   return (
     <div className="container">
       <div className="row min-vh-100">
         <div className="col d-flex flex-column justify-content-center align-items-center">
-          {showingCreateNewPostForm === false && (
+          {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
             <div>
               <h1>APP2000 Prosjekt</h1>
 
@@ -44,10 +63,11 @@ export default function Markedsplass() {
             </div>
           )}
 
-
-          {(posts.length > 0 && showingCreateNewPostForm === false) && renderPostsTable()}
+          {(posts.length > 0 && showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && renderPostsTable()}
 
           {showingCreateNewPostForm && <LagInnlegg onPostCreated={onPostCreated} />}
+
+          {postCurrentlyBeingUpdated !== null && <OppdaterInnlegg post={postCurrentlyBeingUpdated} onPostUpdated={onPostUpdated} />}
         </div>
       </div>
     </div>
@@ -72,8 +92,8 @@ export default function Markedsplass() {
                 <td>{post.title}</td>
                 <td>{post.content}</td>
                 <td>
-                  <button className="btn btn-dark btn-lg mx-3 my-3">Update</button>
-                  <button className="btn btn-secondary btn-lg">Delete</button>
+                  <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>
+                  <button onClick={() => { if (window.confirm(`Er du sikker på at du ønsker å slette innlegget "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg">Slett</button>
                 </td>
               </tr>
             ))}
@@ -95,5 +115,49 @@ export default function Markedsplass() {
     alert(`Innlegget er opprettet. "${createdPost.title}" ligger nå på markedsplassen.`);
 
     getPosts();
+  }
+
+  function onPostUpdated(updatedPost) {
+    setPostCurrentlyBeingUpdated(null);
+
+    if (updatedPost === null) {
+      return;
+    }
+
+    let postsCopy = [...posts];
+
+    const index = postsCopy.findIndex((postsCopyPost, currentIndex) => {
+      if (postsCopyPost.postId === updatedPost.postId) {
+        return true;
+      }
+      return false;
+    });
+
+    if (index !== -1) {
+      postsCopy[index] = updatedPost;
+    }
+
+    setPosts(postsCopy);
+
+    alert(`Innlegget er oppdatert. "${updatedPost.title}" er nå oppdatert på markedsplassen`);
+  }
+
+  function onPostDeleted(deletedPostPostId) {
+    let postsCopy = [...posts];
+
+    const index = postsCopy.findIndex((postsCopyPost, currentIndex) => {
+      if (postsCopyPost.postId === deletedPostPostId) {
+        return true;
+      }
+      return false;
+    });
+
+    if (index !== -1) {
+      postsCopy.splice(index, 1);
+    }
+
+    setPosts(postsCopy);
+
+    alert(`Innlegget er slettet.`);
   }
 }
