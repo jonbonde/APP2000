@@ -93,7 +93,7 @@ export default function Markedsplass() {
                 <td>{post.content}</td>
                 <td>
                   <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>
-                  <button onClick={() => { if (window.confirm(`Er du sikker på at du ønsker å slette innlegget "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg">Slett</button>
+                  <button onClick={() => { if (window.confirm(`Er du sikker på at du ønsker å slette innlegget "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg mx-3">Slett</button>
                 </td>
               </tr>
             ))}
