@@ -6,6 +6,7 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className="nav-link p-2">Forside</Link> <br />
             <Link to="/Markedsplass" className="nav-link p-2">Markedsplass</Link> <br />
+            <Link to="/WireframeTool" className="nav-link p-2">Website designer</Link> <br />
         </nav>
     );
 }
