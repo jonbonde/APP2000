@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +16,18 @@ function HamburgerMenu() {
       <div className="bar"></div>
       {isOpen && (
         <div className="menu-options">
-          <a href="#">Homepage</a>
-          <a href="#">Marketplace</a>
-          <a href="#">Profile</a>
+          <motion.div 
+            whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+          ><Link to="/">Forside</Link></motion.div>
+          <motion.div
+            whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+          ><Link to="/Markedsplass">Markedsplass</Link></motion.div>
+          <motion.div
+            whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+          ><Link to="/WireframeTool">Website designer</Link></motion.div>
+          <motion.div
+            whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+          ><Link to="/Registrer">Registrer deg</Link></motion.div>
         </div>
       )}
     </div>
