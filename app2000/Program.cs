@@ -96,4 +96,18 @@ app.MapDelete("/delete-post-by-id/{postId}", async (int postId) =>
     }
 }).WithTags("Posts Endpoints");
 
+app.MapPost("/create-bruker", async (Bruker brukerToCreate) =>
+{
+    bool createSuccessful = await BrukereRepository.CreateBrukerAsync(brukerToCreate);
+
+    if (createSuccessful)
+    {
+        return Results.Ok("Create successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Brukere Endpoints");
+
 app.Run();

@@ -16,6 +16,76 @@ namespace app2000.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.3");
 
+            modelBuilder.Entity("app2000.Data.Bruker", b =>
+                {
+                    b.Property<int>("BrukerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Brukernavn")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Epost")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Passord")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("BrukerId");
+
+                    b.ToTable("Brukere");
+
+                    b.HasData(
+                        new
+                        {
+                            BrukerId = 1,
+                            Brukernavn = "Brukernavn 1 som trenger å få laget en nettside",
+                            Epost = "Epost 1",
+                            Passord = "Passord 1"
+                        },
+                        new
+                        {
+                            BrukerId = 2,
+                            Brukernavn = "Brukernavn 2 som trenger å få laget en nettside",
+                            Epost = "Epost 2",
+                            Passord = "Passord 2"
+                        },
+                        new
+                        {
+                            BrukerId = 3,
+                            Brukernavn = "Brukernavn 3 som trenger å få laget en nettside",
+                            Epost = "Epost 3",
+                            Passord = "Passord 3"
+                        },
+                        new
+                        {
+                            BrukerId = 4,
+                            Brukernavn = "Brukernavn 4 som trenger å få laget en nettside",
+                            Epost = "Epost 4",
+                            Passord = "Passord 4"
+                        },
+                        new
+                        {
+                            BrukerId = 5,
+                            Brukernavn = "Brukernavn 5 som trenger å få laget en nettside",
+                            Epost = "Epost 5",
+                            Passord = "Passord 5"
+                        },
+                        new
+                        {
+                            BrukerId = 6,
+                            Brukernavn = "Brukernavn 6 som trenger å få laget en nettside",
+                            Epost = "Epost 6",
+                            Passord = "Passord 6"
+                        });
+                });
+
             modelBuilder.Entity("app2000.Data.Post", b =>
                 {
                     b.Property<int>("PostId")
@@ -40,38 +110,38 @@ namespace app2000.Data.Migrations
                         new
                         {
                             PostId = 1,
-                            Content = "This is post 1 and it has some very interesting content.",
-                            Title = "Post 1"
+                            Content = "Dette er innlegg 1 som trenger å få laget en nettside",
+                            Title = "Innlegg 1"
                         },
                         new
                         {
                             PostId = 2,
-                            Content = "This is post 2 and it has some very interesting content.",
-                            Title = "Post 2"
+                            Content = "Dette er innlegg 2 som trenger å få laget en nettside",
+                            Title = "Innlegg 2"
                         },
                         new
                         {
                             PostId = 3,
-                            Content = "This is post 3 and it has some very interesting content.",
-                            Title = "Post 3"
+                            Content = "Dette er innlegg 3 som trenger å få laget en nettside",
+                            Title = "Innlegg 3"
                         },
                         new
                         {
                             PostId = 4,
-                            Content = "This is post 4 and it has some very interesting content.",
-                            Title = "Post 4"
+                            Content = "Dette er innlegg 4 som trenger å få laget en nettside",
+                            Title = "Innlegg 4"
                         },
                         new
                         {
                             PostId = 5,
-                            Content = "This is post 5 and it has some very interesting content.",
-                            Title = "Post 5"
+                            Content = "Dette er innlegg 5 som trenger å få laget en nettside",
+                            Title = "Innlegg 5"
                         },
                         new
                         {
                             PostId = 6,
-                            Content = "This is post 6 and it has some very interesting content.",
-                            Title = "Post 6"
+                            Content = "Dette er innlegg 6 som trenger å få laget en nettside",
+                            Title = "Innlegg 6"
                         });
                 });
 #pragma warning restore 612, 618
