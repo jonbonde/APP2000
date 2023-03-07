@@ -61,21 +61,10 @@ function WireframeTool() {
         Get started by choosing from the several options
       </p>
 
-    <div className="">
-      <p>Hallo</p>
-    </div>  
-
-
-    <HamburgerMenu>
-                    
-    </HamburgerMenu> 
-
+      <div className="">
+        <p>Hallo</p>
+      </div>
     </div>
-
-
-    
-    
-
   );
 }
 

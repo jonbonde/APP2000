@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
     return (
         <div>
-            <h1>Dette er forsiden123 nei</h1>
+            <h1>Dette er forsiden</h1>
             <h2>gruppe 7 sitt prosjekt i APP2000</h2>
         </div>
     );
