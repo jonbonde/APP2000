@@ -295,33 +295,6 @@ header {
   font-size: 16px;
 }
 
-.hamburger-menu:hover .dropdown-menu {
-  display: block;
-}
-
-.hamburger-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  margin-left: auto;
-  background-color: #fff; /* Added background color */
-  padding-top: 5px; /* Added padding to create space between the lines and the menu edges */
-  padding-bottom: 5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  border-radius: 4px; /* Added border-radius to create rounded corners */
-}
-
-.hamburger-menu span {
-  display: block;
-  background-color: #333; /* Changed background color of the lines */
-  height: 3px;
-  border-radius: 4px;
-}
-
 .textbox-container {
   text-align: center;
   margin-top: 20px;
