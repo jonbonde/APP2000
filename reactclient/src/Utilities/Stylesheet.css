@@ -344,15 +344,15 @@ header {
   cursor: pointer;
 }
 
-.button1, 
+/* .button1, 
 .button2 {
   background-color: #4169E1;
-}
+} */
 
-.button1:hover,
+/* .button1:hover,
 .button2:hover {
   background-color: #00CED1;
-}
+} */
 
 .footer-container {
   background-color: #4169E1;
