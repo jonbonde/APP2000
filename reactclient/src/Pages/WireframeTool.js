@@ -1,24 +1,20 @@
 import "../Utilities/Stylesheet.css";
 import HamburgerMenu from "./HamburgerMenu";
+import Popup from "./Popup";
 
 function WireframeTool() {
   return (
     <div className="background">
-      
-      <div className="customWebpage">
-
+      {" "}
+      {/* kommentar */}
+      <div className="customWebpage"></div>
+      <div>
+        <Popup />
       </div>
-
-      <h1 className="heading">Design your own webpage!
-      </h1>
-      <p className="smallerHeading">
-        Get started by choosing from the several options
-      </p>
-
-      <div className="">
-        <p>Hallo</p>
+      <div className="header-container">
+        <h1 className="header-title">Nettside AS</h1>
       </div>
-      <nav class="navbarRight"> 
+      <nav class="navbarRight">
         <ul>
           <li>
             <button onClick={handleTitlesButtonClick}>Titles</button>
@@ -41,8 +37,14 @@ function WireframeTool() {
           <button onClick={handleResetButtonClick}>Reset</button>
         </ul>
       </nav>
-
       <HamburgerMenu></HamburgerMenu>
+      <footer>
+        <div className="footer-containerWFT">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </footer>
     </div>
   );
 }
