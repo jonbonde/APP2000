@@ -58,6 +58,9 @@ function Home() {
                             scale:1.02,
                             background:"#00CED1"                  
                         }}
+                        whileTap={{
+                            scale:0.9
+                        }}
                         href="Markedsplass" class="button button1" >
                             Markedsplass
                     </motion.a>
@@ -87,6 +90,9 @@ function Home() {
                         whileHover={{
                             scale:1.02,
                             background:"#00CED1"                  
+                        }}
+                        whileTap={{
+                            scale:0.9
                         }}
                         href="#" class="button button2">
                             Lag Anbud
