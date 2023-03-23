@@ -6,9 +6,12 @@ function Home() {
     return (
         <div className='main'>
             <header>
-                <div className='header-container'>
-                    <h1 className='header-title'>Nettside AS</h1>
-                </div>
+                <motion.div 
+                className='header-container'>
+                    <h1 className='header-title'>
+                        Nettside AS
+                    </h1>
+                </motion.div>
                 <motion.div 
                 initial={{
                     opacity:0,
@@ -55,8 +58,8 @@ function Home() {
                             scale:1.02,
                             background:"#00CED1"                  
                         }}
-                        href="#" class="button button1" >
-                            Markedplass
+                        href="Markedsplass" class="button button1" >
+                            Markedsplass
                     </motion.a>
                     <motion.a
                         initial={{
@@ -72,6 +75,9 @@ function Home() {
                         }}
                         viewport={{
                             once:true
+                        }}
+                        whileClick={{
+                            scale:15
                         }}
                         transition={{
                             type:"spring",
