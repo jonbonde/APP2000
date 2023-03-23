@@ -9,9 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = app2000
 build_property.RootNamespace = app2000
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\hippo\Desktop\APP2000\APP2000\app2000\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\hippo\Desktop\APP2000\APP2000\app2000
+=======
+build_property.ProjectDir = C:\Users\jhdan\repositories\APP2000\app2000\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jhdan\repositories\APP2000\app2000
+>>>>>>> 99470be02c637bd50d2b565092b5c007a0abee50
 build_property._RazorSourceGeneratorDebug = 
