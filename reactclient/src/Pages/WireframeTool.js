@@ -1,6 +1,8 @@
 import "../Utilities/Stylesheet.css";
 import HamburgerMenu from "./HamburgerMenu";
 import Popup from "./Popup";
+import Backdrop from "./WireframeTuto";
+import { motion } from "framer-motion";
 
 function WireframeTool() {
   return (
@@ -8,9 +10,22 @@ function WireframeTool() {
       {" "}
       {/* kommentar */}
       <div className="customWebpage"></div>
-      <div>
+      <motion.div
+      className="balls"
+      initial={{
+        scale:0,
+        opacity:0,
+        translateY:"50vh",
+      }}
+      whileInView={{
+        scale:1,
+        opacity:1,
+        translate:0,
+      }}
+      >
         <Popup />
-      </div>
+        <Backdrop />
+      </motion.div>
       <div className="header-container">
         <h1 className="header-title">Nettside AS</h1>
       </div>
