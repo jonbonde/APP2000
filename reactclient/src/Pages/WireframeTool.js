@@ -11,17 +11,17 @@ function WireframeTool() {
       {/* kommentar */}
       <div className="customWebpage"></div>
       <motion.div
-      className="balls"
-      initial={{
-        scale:0,
-        opacity:0,
-        translateY:"50vh",
-      }}
-      whileInView={{
-        scale:1,
-        opacity:1,
-        translate:0,
-      }}
+        className="balls"
+        initial={{
+          scale: 0,
+          opacity: 0,
+          translateY: "50vh",
+        }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+          translate: 0,
+        }}
       >
         <Popup />
         <Backdrop />
@@ -29,13 +29,29 @@ function WireframeTool() {
       <div className="header-container">
         <h1 className="header-title">Nettside AS</h1>
       </div>
+
+    
+
+
+
+      {/* Navbar høyre side */}
       <nav class="navbarRight">
+        <h2
+          style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}
+        >
+          Elements
+        </h2>
+
         <ul>
           <li>
             <button onClick={handleTitlesButtonClick}>Titles</button>
-          </li>
-          <li>
-            <button onClick={handleFontsButtonClick}>Fonts</button>
           </li>
           <li>
             <button onClick={handlePicturesButtonClick}>Pictures</button>
@@ -47,11 +63,96 @@ function WireframeTool() {
             <button>Footer</button>
           </li>
           <li>
-            <button>Text</button>
+            <button>Textbox</button>
           </li>
           <button onClick={handleResetButtonClick}>Reset</button>
         </ul>
       </nav>
+
+
+
+      {/* Navbar venstre side */}
+      <nav className="navbarLeft">
+        <h2
+          style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}
+        >
+          Options
+        </h2>
+        <ul>
+          
+          <li>
+          <button onClick={handleFontsButtonClick}>Fonts</button>
+          </li>
+         
+          <li>
+            <section className="tools-board">
+
+              <div className="rad">
+                <ul className="options">
+
+                </ul>
+              </div>
+
+              <div className="rad">
+                <ul className="options">
+                 
+                  <li className="option active tool" id="pensel">
+                    <span>Brush</span>
+                  </li>
+
+                  <li className="option tool" id="viskel">
+                    <span>Eraser</span>
+                  </li>
+
+                  <li className="option">
+                    <input
+                      type="range"
+                      id="size-slider"
+                      alt="bilde av skaleringslinje"
+                      min="1"
+                      max="30"
+                      value="5"
+                    />
+                  </li>
+
+
+                </ul>
+
+              </div>
+              
+              <div className="rad farge">
+                <label className="title">Colours</label>
+                <ul className="options">
+                  <li className="option"></li>
+                  <li className="option selected"></li>
+                  <li className="option"></li>
+                  <li className="option"></li>
+                  <li className="option"> </li>
+                  <li className="option"> </li>
+                  <li className="option">
+                    <input type="color" id="farge-velger" value="#4A98F7" />
+                  </li>
+                </ul>
+              </div>
+
+
+              <div className="row buttons">
+                <button className="clear-canvas">Delete</button>
+                <button className="save-img">Save Wireframe</button>
+              </div>
+            </section>
+          </li>
+        </ul>
+      </nav>
+
+
       <HamburgerMenu></HamburgerMenu>
       <footer>
         <div className="footer-containerWFT">
@@ -91,6 +192,7 @@ function handleTitlesButtonClick() {
   textElement.style.top = "32%";
   textElement.style.left = "42%";
   textElement.style.transform = "translate(-50%, -50%)";
+  const containerElement = document.getElementById("text-container");
   document.body.appendChild(textElement);
 }
 
@@ -255,5 +357,21 @@ function handleNavbarButtonClick() {
   navbarElement.style.transform = "translate(-50%, -50%)";
   document.body.appendChild(navbarElement);
 }
+
+
+/* ---------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default WireframeTool;
