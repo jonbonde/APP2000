@@ -56,11 +56,10 @@
   display: block;
   width: 100%;
   background-color: #fff;
-  border: none;
-  border-radius: 5px;
+  border-radius: 10px; /* Hvor runde skal knappene være */
   padding: 10px;
   box-sizing: border-box;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   cursor: pointer;
 }
@@ -93,11 +92,10 @@
   display: block;
   width: 100%;
   background-color: #fff;
-  border: 1px black;
-  border-radius: 5px;
+  border-radius: 10px; /* Hvor runde skal knappene være */
   padding: 10px;
   box-sizing: border-box;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   cursor: pointer;
 }
@@ -105,7 +103,8 @@
 /* Mer styling ----------------------- */
 
 .tools-board .rad{ /*vertikalt tools */
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .rad .options .option{
@@ -193,7 +192,7 @@
 /* Save og delete knapper styling --------------------------- */
 
 .buttons { /* Justerer hvor høyt Delete og Save knappene ligger */
-  margin-top: 320px;
+  margin-top: 230px;
 }
 
 .buttons button {

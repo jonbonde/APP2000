@@ -4,6 +4,7 @@ import Popup from "./Popup";
 import Backdrop from "./WireframeTuto";
 import { motion } from "framer-motion";
 
+
 function WireframeTool() {
   return (
     <div className="background">
@@ -62,9 +63,6 @@ function WireframeTool() {
           <li>
             <button>Footer</button>
           </li>
-          <li>
-            <button>Textbox</button>
-          </li>
           <button onClick={handleResetButtonClick}>Reset</button>
         </ul>
       </nav>
@@ -88,7 +86,7 @@ function WireframeTool() {
         <ul>
           
           <li>
-          <button onClick={handleFontsButtonClick}>Fonts</button>
+          <button onClick={handleFontsButtonClick}>Change Font</button>
           </li>
          
           <li>
@@ -104,11 +102,15 @@ function WireframeTool() {
                 <ul className="options">
                  
                   <li className="option active tool" id="pensel">
-                    <span>Brush</span>
+                    <button>Brush</button>
                   </li>
 
                   <li className="option tool" id="viskel">
-                    <span>Eraser</span>
+                    <button>Eraser</button>
+                  </li>
+
+                  <li className="option tool" id="Tykkelse">
+                    <span>Thickness</span>
                   </li>
 
                   <li className="option">
@@ -118,7 +120,7 @@ function WireframeTool() {
                       alt="bilde av skaleringslinje"
                       min="1"
                       max="30"
-                      value="5"
+                      value="10"
                     />
                   </li>
 
@@ -182,7 +184,7 @@ function handleResetButtonClick() {
   }
 }
 
-// Titles button, legger til tekst på skjermen.
+//
 
 function handleTitlesButtonClick() {
   const titleText = "Hello, world!";
