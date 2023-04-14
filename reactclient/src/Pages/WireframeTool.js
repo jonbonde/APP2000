@@ -3,6 +3,8 @@ import HamburgerMenu from "./HamburgerMenu";
 import Popup from "./Popup";
 import Backdrop from "./WireframeTuto";
 import { motion } from "framer-motion";
+import React, { useRef, useEffect } from 'react';
+
 
 
 function WireframeTool() {
@@ -30,6 +32,13 @@ function WireframeTool() {
       <div className="header-container">
         <h1 className="header-title">Nettside AS</h1>
       </div>
+
+        
+
+        {/* Tegnebrettet i midten */}
+      <section class="drawing-board">
+        <canvas id="canvas"></canvas>
+      </section>
 
     
 
@@ -61,7 +70,7 @@ function WireframeTool() {
             <button onClick={handleNavbarButtonClick}>Navbar</button>
           </li>
           <li>
-            <button>Footer</button>
+            <button>Textbox</button>
           </li>
           <button onClick={handleResetButtonClick}>Reset</button>
         </ul>
@@ -102,7 +111,7 @@ function WireframeTool() {
                 <ul className="options">
                  
                   <li className="option active tool" id="pensel">
-                    <button>Brush</button>
+                    <button id="brushButton">Brush</button>
                   </li>
 
                   <li className="option tool" id="viskel">
@@ -174,6 +183,10 @@ function handleResetButtonClick() {
   if (textElement) {
     textElement.remove();
   }
+  const textBoxElement = document.querySelector("textBox");
+  if (textBoxElement) {
+    textBoxElement.remove();
+  }
   const pictureElement = document.querySelector("divPicture");
   if (pictureElement) {
     pictureElement.remove();
@@ -209,6 +222,10 @@ function handleFontsButtonClick() {
       "Impact, Charcoal, sans-serif",
       "Times New Roman, Times, serif",
       "Courier New, Courier, monospace",
+      /*"Comic Sans MS, Comic Sans, cursive",
+      "OCR A Std, monospace",
+      "New Century Schoolbook, TeX Gyre Schola, serif",
+      "Optima, sans-serif" */
     ];
 
     const currentFontIndex = fonts.indexOf(textElement.style.fontFamily);
@@ -361,7 +378,7 @@ function handleNavbarButtonClick() {
 }
 
 
-/* ---------------------------------------------- */
+/* Javascript for canvas og funksjonalitet ----------------- */
 
 
 
