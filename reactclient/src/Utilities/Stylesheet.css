@@ -217,7 +217,7 @@
 /* Save og delete knapper styling --------------------------- */
 
 .buttons { /* Justerer hvor høyt Delete og Save knappene ligger */
-  margin-top: 230px;
+  /* margin-top: 2vh; */
 }
 
 .buttons button {
