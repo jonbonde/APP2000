@@ -4,7 +4,7 @@ import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import Markedsplass from "./Pages/Markedsplass";
 import WireframeTool from "./Pages/WireframeTool";
-import Registrer from "./Pages/Registrer";
+import LoggInn from "./Pages/LoggInn"
 import "./Utilities/Stylesheet.css";
 
 export default function App() {
@@ -15,8 +15,9 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="Markedsplass" element={<Markedsplass />} />
           <Route path="WireframeTool" element={<WireframeTool />} />
-          <Route path="Registrer" element={<Registrer />} />
+          <Route path="LoggInn" element={<LoggInn />} />
           <Route path="*" element={<Home />} />
+          
         </Route>
       </Routes>
     </BrowserRouter>

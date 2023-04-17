@@ -27,7 +27,7 @@ function HamburgerMenu() {
           ><Link to="/WireframeTool">Website designer</Link></motion.div>
           <motion.div
             whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
-          ><Link to="/Registrer">Registrer deg</Link></motion.div>
+          ><Link to="/LoggInn">Logg inn</Link></motion.div>
         </div>
       )}
     </div>

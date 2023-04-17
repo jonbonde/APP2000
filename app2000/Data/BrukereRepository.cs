@@ -1,4 +1,6 @@
-﻿namespace app2000.Data
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace app2000.Data
 {
     internal static class BrukereRepository
     {
@@ -16,6 +18,14 @@
                 {
                     return false;
                 }
+            }
+        }
+
+        internal async static Task<Bruker> LoggInnAsync(string brukernavn, string passord)
+        {
+            using (var db = new AppDBContext())
+            {
+                return await db.Brukere.FirstOrDefaultAsync(bruker => bruker.Brukernavn == brukernavn && bruker.Passord == passord);
             }
         }
     }
