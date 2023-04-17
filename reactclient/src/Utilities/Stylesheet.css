@@ -163,14 +163,14 @@
   min-height: 100vh;
 }
 
-header {
-  background-color: #333;
+.header {
+  /* background-color: #333;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  position: relative;
+  position: relative; */
 }
 
 .header-container {
@@ -183,15 +183,15 @@ header {
 }
 
 .header-title {
-  font-size: 60px;
+  /* font-size: 60px;
   font-family: "KirvyRegular";
   text-align: center;
   margin-bottom: 10px;
-  width: 100%;
+  width: 100%; */
 }
 
-header {
-  background: linear-gradient(to bottom, #00ced1, #4169e1);
+.header {
+  /*background: linear-gradient(to bottom, #00ced1, #4169e1); */
 }
 
 .dropdown-menu {
@@ -225,7 +225,7 @@ header {
 }
 
 .textbox-container p {
-  font-size: 20px;
+  font-size: 25px;
   font-family: "KirvyRegular";
   margin-left: 20px 0;
   margin-right: 20px 0;
@@ -236,21 +236,40 @@ header {
   text-align: center;
 }
 
+.bottom-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bottom-text h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bottom-text p {
+  font-size: 25px;
+  font-family: "KirvyRegular";
+  margin-left: 20px 0;
+  margin-right: 20px 0;
+  padding-left: 300px;
+  padding-right: 300px;
+  text-align: center;
+}
+
 .button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  /*height: 500px;*/
 }
 
 .button {
   display: inline-block;
   padding: 20px;
   background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  border: 5px;
+  border-radius: 7px;
   margin: 20px;
   font-size: 24px;
   font-family: "KirvyRegular";
