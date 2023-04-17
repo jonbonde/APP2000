@@ -110,4 +110,18 @@ app.MapPost("/create-bruker", async (Bruker brukerToCreate) =>
     }
 }).WithTags("Brukere Endpoints");
 
+app.MapGet("/logg-inn/{brukernavn}/{passord}", async (string brukernavn, string passord) =>
+{
+    Bruker brukerToReturn = await BrukereRepository.LoggInnAsync(brukernavn, passord);
+
+    if (brukerToReturn != null)
+    {
+        return Results.Ok(brukerToReturn);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Brukere Endpoints");
+
 app.Run();
