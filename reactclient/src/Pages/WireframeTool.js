@@ -61,18 +61,50 @@ function WireframeTool() {
 
         <ul>
           <li>
-            <button onClick={handleTitlesButtonClick}>Titles</button>
+            <motion.button 
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+            onClick={handleTitlesButtonClick}>Titles</motion.button>
           </li>
           <li>
-            <button onClick={handlePicturesButtonClick}>Pictures</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} onClick={handlePicturesButtonClick}>Pictures</motion.button>
           </li>
           <li>
-            <button onClick={handleNavbarButtonClick}>Navbar</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} onClick={handleNavbarButtonClick}>Navbar</motion.button>
           </li>
           <li>
-            <button>Textbox</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}>Textbox</motion.button>
           </li>
-          <button onClick={handleResetButtonClick}>Reset</button>
+          <motion.button 
+          whileHover={{
+            scale:1.05,
+        }}
+        whileTap={{
+            scale:0.9
+        }}
+        onClick={handleResetButtonClick}>Reset</motion.button>
         </ul>
       </nav>
 
@@ -95,7 +127,14 @@ function WireframeTool() {
         <ul>
           
           <li>
-          <button onClick={handleFontsButtonClick}>Change Font</button>
+          <motion.button
+          whileHover={{
+            scale:1.05,
+        }}
+        whileTap={{
+            scale:0.9
+        }}
+         onClick={handleFontsButtonClick}>Change Font</motion.button>
           </li>
          
           <li>
@@ -111,11 +150,23 @@ function WireframeTool() {
                 <ul className="options">
                  
                   <li className="option active tool" id="pensel">
-                    <button id="brushButton">Brush</button>
+                    <motion.button whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}id="brushButton">Brush</motion.button>
                   </li>
 
                   <li className="option tool" id="viskel">
-                    <button>Eraser</button>
+                    <motion.button 
+                    whileHover={{
+                      scale:1.05,
+                  }}
+                  whileTap={{
+                      scale:0.9
+                  }}
+                  >Eraser</motion.button>
                   </li>
 
                   <li className="option tool" id="Tykkelse">
@@ -141,22 +192,71 @@ function WireframeTool() {
               <div className="rad farge">
                 <label className="title">Colours</label>
                 <ul className="options">
-                  <li className="option"></li>
-                  <li className="option selected"></li>
-                  <li className="option"></li>
-                  <li className="option"></li>
-                  <li className="option"> </li>
-                  <li className="option"> </li>
-                  <li className="option">
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option selected"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option">
                     <input type="color" id="farge-velger" value="#4A98F7" />
-                  </li>
+                  </motion.li>
                 </ul>
               </div>
 
 
               <div className="row buttons">
-                <button className="clear-canvas">Delete</button>
-                <button className="save-img">Save Wireframe</button>
+                <motion.button 
+                whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+          className="clear-canvas">Delete</motion.button>
+                <motion.button 
+                whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+          className="save-img">Save Wireframe</motion.button>
               </div>
             </section>
           </li>
