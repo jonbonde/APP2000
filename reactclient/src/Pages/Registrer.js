@@ -45,7 +45,7 @@ export default function LoggInn(props) {
                 alert(error);
             });
 
-        //props.onBrukerCreated(brukerToCreate);
+        props.onBrukerCreated(brukerToCreate);
     };
 
     return (
@@ -68,7 +68,7 @@ export default function LoggInn(props) {
                 <input value={formData.passord} name="passord" type="password" className="form-control" onChange={handleChange} />
             </div>
 
-            <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Logg inn</button>
+            <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Registrer</button>
             <button onClick={() => props.onBrukerCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button>
         </div>
     );

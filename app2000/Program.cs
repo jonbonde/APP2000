@@ -110,4 +110,21 @@ app.MapPost("/create-bruker", async (Bruker brukerToCreate) =>
     }
 }).WithTags("Brukere Endpoints");
 
+app.MapPost("/logg-inn", async (SignInRequest request) =>
+{
+    SignInResponse response = new SignInResponse();
+
+    try
+    {
+        response = await BrukereRepository.LoggInnAsync(request);
+        return Results.Ok(response);
+    }
+    catch (Exception ex)
+    {
+        response.IsSuccess = false;
+        response.Message = ex.Message;
+        return Results.BadRequest(response);
+    }
+}).WithTags("Brukere Endpoints");
+
 app.Run();

@@ -3,6 +3,9 @@ import HamburgerMenu from "./HamburgerMenu";
 import Popup from "./Popup";
 import Backdrop from "./WireframeTuto";
 import { motion } from "framer-motion";
+import React, { useRef, useEffect } from 'react';
+
+
 
 function WireframeTool() {
   return (
@@ -11,17 +14,17 @@ function WireframeTool() {
       {/* kommentar */}
       <div className="customWebpage"></div>
       <motion.div
-      className="balls"
-      initial={{
-        scale:0,
-        opacity:0,
-        translateY:"50vh",
-      }}
-      whileInView={{
-        scale:1,
-        opacity:1,
-        translate:0,
-      }}
+        className="balls"
+        initial={{
+          scale: 0,
+          opacity: 0,
+          translateY: "50vh",
+        }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+          translate: 0,
+        }}
       >
         <Popup />
         <Backdrop />
@@ -29,29 +32,238 @@ function WireframeTool() {
       <div className="header-container">
         <h1 className="header-title">Nettside AS</h1>
       </div>
+
+        
+
+        {/* Tegnebrettet i midten */}
+      <section class="drawing-board">
+        <canvas id="canvas"></canvas>
+      </section>
+
+    
+
+
+
+      {/* Navbar høyre side */}
       <nav class="navbarRight">
+        <h2
+          style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}
+        >
+          Elements
+        </h2>
+
         <ul>
           <li>
-            <button onClick={handleTitlesButtonClick}>Titles</button>
+            <motion.button 
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+            onClick={handleTitlesButtonClick}>Titles</motion.button>
           </li>
           <li>
-            <button onClick={handleFontsButtonClick}>Fonts</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} onClick={handlePicturesButtonClick}>Pictures</motion.button>
           </li>
           <li>
-            <button onClick={handlePicturesButtonClick}>Pictures</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} onClick={handleNavbarButtonClick}>Navbar</motion.button>
           </li>
           <li>
-            <button onClick={handleNavbarButtonClick}>Navbar</button>
+            <motion.button
+            whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}>Textbox</motion.button>
           </li>
-          <li>
-            <button>Footer</button>
-          </li>
-          <li>
-            <button>Text</button>
-          </li>
-          <button onClick={handleResetButtonClick}>Reset</button>
+          <motion.button 
+          whileHover={{
+            scale:1.05,
+        }}
+        whileTap={{
+            scale:0.9
+        }}
+        onClick={handleResetButtonClick}>Reset</motion.button>
         </ul>
       </nav>
+
+
+
+      {/* Navbar venstre side */}
+      <nav className="navbarLeft">
+        <h2
+          style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}
+        >
+          Options
+        </h2>
+        <ul>
+          
+          <li>
+          <motion.button
+          whileHover={{
+            scale:1.05,
+        }}
+        whileTap={{
+            scale:0.9
+        }}
+         onClick={handleFontsButtonClick}>Change Font</motion.button>
+          </li>
+         
+          <li>
+            <section className="tools-board">
+
+              <div className="rad">
+                <ul className="options">
+
+                </ul>
+              </div>
+
+              <div className="rad">
+                <ul className="options">
+                 
+                  <li className="option active tool" id="pensel">
+                    <motion.button whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}id="brushButton">Brush</motion.button>
+                  </li>
+
+                  <li className="option tool" id="viskel">
+                    <motion.button 
+                    whileHover={{
+                      scale:1.05,
+                  }}
+                  whileTap={{
+                      scale:0.9
+                  }}
+                  >Eraser</motion.button>
+                  </li>
+
+                  <li className="option tool" id="Tykkelse">
+                    <span>Thickness</span>
+                  </li>
+
+                  <li className="option">
+                    <input
+                      type="range"
+                      id="size-slider"
+                      alt="bilde av skaleringslinje"
+                      min="1"
+                      max="30"
+                      value="10"
+                    />
+                  </li>
+
+
+                </ul>
+
+              </div>
+              
+              <div className="rad farge">
+                <label className="title">Colours</label>
+                <ul className="options">
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option selected"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option"></motion.li>
+                  <motion.li whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }} className="option">
+                    <input type="color" id="farge-velger" value="#4A98F7" />
+                  </motion.li>
+                </ul>
+              </div>
+
+
+              <div className="row buttons">
+                <motion.button 
+                whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+          className="clear-canvas">Delete</motion.button>
+                <motion.button 
+                whileHover={{
+              scale:1.05,
+          }}
+          whileTap={{
+              scale:0.9
+          }}
+          className="save-img">Save Wireframe</motion.button>
+              </div>
+            </section>
+          </li>
+        </ul>
+      </nav>
+
+
       <HamburgerMenu></HamburgerMenu>
       <footer>
         <div className="footer-containerWFT">
@@ -71,6 +283,10 @@ function handleResetButtonClick() {
   if (textElement) {
     textElement.remove();
   }
+  const textBoxElement = document.querySelector("textBox");
+  if (textBoxElement) {
+    textBoxElement.remove();
+  }
   const pictureElement = document.querySelector("divPicture");
   if (pictureElement) {
     pictureElement.remove();
@@ -81,7 +297,7 @@ function handleResetButtonClick() {
   }
 }
 
-// Titles button, legger til tekst på skjermen.
+//
 
 function handleTitlesButtonClick() {
   const titleText = "Hello, world!";
@@ -91,6 +307,7 @@ function handleTitlesButtonClick() {
   textElement.style.top = "32%";
   textElement.style.left = "42%";
   textElement.style.transform = "translate(-50%, -50%)";
+  const containerElement = document.getElementById("text-container");
   document.body.appendChild(textElement);
 }
 
@@ -105,6 +322,10 @@ function handleFontsButtonClick() {
       "Impact, Charcoal, sans-serif",
       "Times New Roman, Times, serif",
       "Courier New, Courier, monospace",
+      /*"Comic Sans MS, Comic Sans, cursive",
+      "OCR A Std, monospace",
+      "New Century Schoolbook, TeX Gyre Schola, serif",
+      "Optima, sans-serif" */
     ];
 
     const currentFontIndex = fonts.indexOf(textElement.style.fontFamily);
@@ -255,5 +476,21 @@ function handleNavbarButtonClick() {
   navbarElement.style.transform = "translate(-50%, -50%)";
   document.body.appendChild(navbarElement);
 }
+
+
+/* Javascript for canvas og funksjonalitet ----------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default WireframeTool;

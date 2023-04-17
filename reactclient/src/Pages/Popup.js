@@ -24,12 +24,12 @@ function Popup() {
             <h2>Design your custom webpage!</h2>
             <p>Choose from the multiple options that are provided.</p>
             <button onClick={closePopup} className="popup-close-button">
-              &#8594;
+             Got it!
             </button>
           </div>
         </div>
       )}
-      {hideNavbar && <style>{`.navbarRight { display: none; }`}</style>}
+      {hideNavbar && <style>{`.navbarRight, .navbarLeft, .drawing-board { display: none; }`}</style>}
     </>
   );
 }
