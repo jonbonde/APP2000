@@ -48,6 +48,10 @@ export default function LoggInn(props) {
         props.onBrukerCreated(brukerToCreate);
     };
 
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
     return (
         <div className="container">
             <h1>APP2000 Prosjekt</h1>
@@ -69,7 +73,7 @@ export default function LoggInn(props) {
             </div>
 
             <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Registrer</button>
-            <button onClick={() => props.onBrukerCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button>
+            <button onClick={refreshPage} className="btn btn-secondary btn-lg w-100 mt-3">Tilbake til logg inn</button>
         </div>
     );
 }

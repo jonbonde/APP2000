@@ -25,10 +25,14 @@ export default function LoggInn() {
         const brukernavn = formData.brukernavn;
         const passord = formData.passord;
 
-        const url = `${Constants.API_URL_LOGG_INN}/${brukernavn}/${passord}`;
+        const url = `${Constants.API_URL_LOGG_INN}`;
 
         fetch(url, {
-            method: "GET",
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
         })
             .then((response) => response.json())
             .then((brukerFromServer) => {
@@ -61,8 +65,7 @@ export default function LoggInn() {
                     <button onClick={loggInn} className="btn btn-dark btn-lg w-100 mt-5">Logg inn</button>
                     <button
                         onClick={() => setShowingRegistrerForm(true)}
-                        className="btn btn-secondary btn-lg w-100 mt-3"
-                    >
+                        className="btn btn-secondary btn-lg w-100 mt-3">
                         Har du ikke bruker? Registrer deg her
                     </button>
                 </div>
