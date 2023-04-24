@@ -1,5 +1,13 @@
-/* Canvas */
+/* Canvas 
+.canvas {
+  width: 200px;
+  height: 200px;
+  border-color: #000;
+  border-radius: 2px;
+  position: relative;
+}
 
+*/
 
 /* Popup */
 

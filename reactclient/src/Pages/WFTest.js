@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import "./Canvas.css";
+import { motion } from "framer-motion";
 
 function Canvas() {
   const canvasRef = useRef(null);
@@ -9,6 +10,7 @@ function Canvas() {
   const [showSquare, setShowSquare] = useState(false);
   const [squarePos, setSquarePos] = useState({ x: 0, y: 0 });
   const showSquareRef = useRef(showSquare);
+  
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,19 +18,23 @@ function Canvas() {
 
     // Set the canvas size
     canvas.width = 600;
-    canvas.height = 400;
+    canvas.height = 800;
 
     let isDrawing = false;
 
     function startDrawing(e) {
+      const canvas = canvasRef.current;
+      const rect = canvas.getBoundingClientRect();
       isDrawing = true;
       context.beginPath();
-      context.moveTo(e.clientX, e.clientY);
+      context.moveTo(e.clientX - rect.left, e.clientY - rect.top);
     }
-
+    
     function draw(e) {
+      const canvas = canvasRef.current;
+      const rect = canvas.getBoundingClientRect();
       if (!isDrawing) return;
-      context.lineTo(e.clientX, e.clientY);
+      context.lineTo(e.clientX - rect.left, e.clientY - rect.top);
       context.stroke();
     }
 
@@ -124,16 +130,111 @@ function Canvas() {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
 
-    context.font = "24px Arial";
+    context.font = `24px arial`;
     context.fillStyle = "black";
     context.textAlign = "center";
     context.fillText("Hello, world!", canvas.width / 2, 30);
   }
 
+  
+  
+
   return (
-    <div className="canvas">
-      <canvas ref={canvasRef} style={{ border: "1px solid black" }} />
+
+    <div>
+
+      <div className="headerContainer">
+        <h1 className="headerTitle">Nettside AS</h1>
+      </div>
+
+      <div className="canvas">
+        <canvas ref={canvasRef} style={{ border: "5px solid black" }} />
       <div>
+
+      <nav class="navbarRight">
+        <h2
+          style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}>Elements</h2>
+
+      <ul>
+        <li>
+          <motion.button whileHover={{scale:1.05,}}whileTap={{scale:0.9}}
+          onClick={handleAddText}>Titles</motion.button>
+        </li>
+
+        <li>
+          <motion.button whileHover={{scale:1.05,}}whileTap={{scale:0.9}} onClick={handleDrawSquare}>Pictures</motion.button>
+        </li>
+      </ul>
+
+      </nav>
+
+
+      <nav className="navbarLeft">
+        <h2 style={{
+            margin: "10px auto",
+            textAlign: "center",
+            borderBottom: "2px solid white",
+            paddingBottom: "10px",
+            width: "100%",
+            color: "white",
+          }}>Options</h2>
+
+        <ul>
+{/* 
+         <li>
+          <motion.button whileHover={{scale:1.05,}}whileTap={{scale:0.9}}
+          onClick={handleFontsButtonClick}>Change Font</motion.button>
+          </li>
+
+*/}
+           
+
+
+
+
+
+        </ul>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className="options">
         <label>
           Color:
           <input type="color" value={color} onChange={handleColorChange} />
@@ -150,11 +251,17 @@ function Canvas() {
         </label>
         <button onClick={handleClearCanvas}>Clear canvas</button>
         <button onClick={handleSaveImage}>Save</button>
-        <button onClick={handleDrawSquare}>Draw Square</button>
-        <button onClick={handleAddText}>Add text</button>
+        </div>
+
+        
+
       </div>
       <HamburgerMenu />
     </div>
+
+
+    </div>
+
   );
 }
 
