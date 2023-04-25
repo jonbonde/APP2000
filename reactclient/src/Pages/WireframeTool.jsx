@@ -3,9 +3,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import Popup from "./Popup";
 import Backdrop from "./WireframeTuto";
 import { motion } from "framer-motion";
-import React, { useRef, useEffect } from 'react';
-
-
+import React, { useRef, useEffect } from "react";
 
 function WireframeTool() {
   return (
@@ -32,18 +30,10 @@ function WireframeTool() {
       <div className="header-container">
         <h1 className="header-title">Nettside AS</h1>
       </div>
-
-        
-
-        {/* Tegnebrettet i midten */}
+      {/* Tegnebrettet i midten */}
       <section class="drawing-board">
         <canvas id="canvas"></canvas>
       </section>
-
-    
-
-
-
       {/* Navbar høyre side */}
       <nav class="navbarRight">
         <h2
@@ -61,55 +51,69 @@ function WireframeTool() {
 
         <ul>
           <li>
-            <motion.button 
-            whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }}
-            onClick={handleTitlesButtonClick}>Titles</motion.button>
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+              onClick={handleTitlesButtonClick}
+            >
+              Titles
+            </motion.button>
           </li>
           <li>
             <motion.button
-            whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} onClick={handlePicturesButtonClick}>Pictures</motion.button>
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+              onClick={handlePicturesButtonClick}
+            >
+              Pictures
+            </motion.button>
           </li>
           <li>
             <motion.button
-            whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} onClick={handleNavbarButtonClick}>Navbar</motion.button>
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+              onClick={handleNavbarButtonClick}
+            >
+              Navbar
+            </motion.button>
           </li>
           <li>
             <motion.button
-            whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }}>Textbox</motion.button>
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+            >
+              Textbox
+            </motion.button>
           </li>
-          <motion.button 
-          whileHover={{
-            scale:1.05,
-        }}
-        whileTap={{
-            scale:0.9
-        }}
-        onClick={handleResetButtonClick}>Reset</motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+            onClick={handleResetButtonClick}
+          >
+            Reset
+          </motion.button>
         </ul>
       </nav>
-
-
-
       {/* Navbar venstre side */}
       <nav className="navbarLeft">
         <h2
@@ -125,48 +129,53 @@ function WireframeTool() {
           Options
         </h2>
         <ul>
-          
           <li>
-          <motion.button
-          whileHover={{
-            scale:1.05,
-        }}
-        whileTap={{
-            scale:0.9
-        }}
-         onClick={handleFontsButtonClick}>Change Font</motion.button>
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+              onClick={handleFontsButtonClick}
+            >
+              Change Font
+            </motion.button>
           </li>
-         
+
           <li>
             <section className="tools-board">
-
               <div className="rad">
-                <ul className="options">
-
-                </ul>
+                <ul className="options"></ul>
               </div>
 
               <div className="rad">
                 <ul className="options">
-                 
                   <li className="option active tool" id="pensel">
-                    <motion.button whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }}id="brushButton">Brush</motion.button>
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                      }}
+                      whileTap={{
+                        scale: 0.9,
+                      }}
+                      id="brushButton"
+                    >
+                      Brush
+                    </motion.button>
                   </li>
 
                   <li className="option tool" id="viskel">
-                    <motion.button 
-                    whileHover={{
-                      scale:1.05,
-                  }}
-                  whileTap={{
-                      scale:0.9
-                  }}
-                  >Eraser</motion.button>
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                      }}
+                      whileTap={{
+                        scale: 0.9,
+                      }}
+                    >
+                      Eraser
+                    </motion.button>
                   </li>
 
                   <li className="option tool" id="Tykkelse">
@@ -183,87 +192,108 @@ function WireframeTool() {
                       value="10"
                     />
                   </li>
-
-
                 </ul>
-
               </div>
-              
+
               <div className="rad farge">
                 <label className="title">Colours</label>
                 <ul className="options">
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option selected"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option"></motion.li>
-                  <motion.li whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }} className="option">
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option selected"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  ></motion.li>
+                  <motion.li
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                    }}
+                    className="option"
+                  >
                     <input type="color" id="farge-velger" value="#4A98F7" />
                   </motion.li>
                 </ul>
               </div>
 
-
               <div className="row buttons">
-                <motion.button 
-                whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }}
-          className="clear-canvas">Delete</motion.button>
-                <motion.button 
-                whileHover={{
-              scale:1.05,
-          }}
-          whileTap={{
-              scale:0.9
-          }}
-          className="save-img">Save Wireframe</motion.button>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                  }}
+                  className="clear-canvas"
+                >
+                  Delete
+                </motion.button>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                  }}
+                  className="save-img"
+                >
+                  Save Wireframe
+                </motion.button>
               </div>
             </section>
           </li>
         </ul>
       </nav>
-
-
       <HamburgerMenu></HamburgerMenu>
       <footer>
         <div className="footer-containerWFT">
@@ -477,20 +507,6 @@ function handleNavbarButtonClick() {
   document.body.appendChild(navbarElement);
 }
 
-
 /* Javascript for canvas og funksjonalitet ----------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default WireframeTool;

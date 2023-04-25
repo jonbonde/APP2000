@@ -31,6 +31,9 @@ function HamburgerMenu() {
           <motion.div
             whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
           ><Link to="/WFTest">Test</Link></motion.div>
+          <motion.div
+            whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+          ><Link to="/Test">Test2</Link></motion.div>
         </div>
        
         
