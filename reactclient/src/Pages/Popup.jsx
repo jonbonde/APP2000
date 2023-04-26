@@ -29,7 +29,7 @@ function Popup() {
           </div>
         </div>
       )}
-      {hideNavbar && <style>{`.navbarRight, .navbarLeft, .drawing-board { display: none; }`}</style>}
+      {hideNavbar && <style>{`.navbarRight, .navbarBottom { display: none; }`}</style>}
     </>
   );
 }
