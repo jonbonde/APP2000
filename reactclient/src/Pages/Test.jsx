@@ -7,8 +7,8 @@ import Popup from "./Popup";
 
 const generator = rough.generator();
 
+// tools
 const elementType = {
-  // (tool)
   selection: "selection",
   line: "line",
   rectangle: "rectangle",
@@ -16,6 +16,7 @@ const elementType = {
   text: "text",
 };
 
+// position
 const positionType = {
   inside: "inside",
   tl: "tl",
@@ -26,6 +27,7 @@ const positionType = {
   end: "end",
 };
 
+// actions
 const actionType = {
   writing: "writing",
   drawing: "drawing",
@@ -34,7 +36,7 @@ const actionType = {
   deleteIt: "deleteIt",
 };
 
-// Creates and returns element. Note: It does not place it on canvas
+// Creates and returns element
 function createElement(id, x1, y1, x2, y2, type) {
   switch (type) {
     case elementType.line:
@@ -70,11 +72,7 @@ const nearPoint = (x, y, x1, y1, name) => {
   return Math.abs(x - x1) < offset && Math.abs(y - y1) < offset ? name : null;
 };
 
-// If b is a point lying on line ab then
-// distance(a,c) = distance(a,b) + distance(b,c)
-// Now lets say b is our mouse pointer and we want to return that b is onLine even when its a little far away from line then
-// distance(a,c) < distance(a,b) + distance(b,c)
-// distance(a,c) - (distance(a,b) + distance(b,c)) = offset
+// Check distance
 function onLine(x1, y1, x2, y2, x, y, distanceOffset = 1) {
   const a = { x: x1, y: y1 };
   const b = { x: x2, y: y2 };
@@ -112,8 +110,6 @@ const positionWithinElement = (x, y, element) => {
       const end = nearPoint(x, y, x2, y2, positionType.end);
       return start || end || insideLine;
     case elementType.pencil:
-      // Pencil drawing is basically group of points. Now there is a straight line between each of these points.
-      // We check here if the x,y lies near any of these line. If yes, then the mouse pointer/(x,y) lies on the pencil drawing
       const betweenAnyPoint = element.points.some((point, index) => {
         const nextPoint = element.points[index + 1];
         if (!nextPoint) return false;
@@ -131,12 +127,12 @@ const positionWithinElement = (x, y, element) => {
   }
 };
 
-// Basic math distance formula
+// math distance formula
 function distance(a, b) {
   return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
 }
 
-// Its goes through elements and return 1 element on which we have out mouse pointer/(x,y)
+// goes through elements and return 1 element on which we have out mouse pointer/(x,y)
 function getElementAtPosition(x, y, elements) {
   return elements
     .map((element) => ({
@@ -198,14 +194,12 @@ function resizedCoordinates(clientX, clientY, position, coordinates) {
   }
 }
 
-// Custom hook that manages History => undo, redo, etc
+// custom hook that manages history
 const useHistory = (initialState) => {
   const [index, setIndex] = useState(0);
   const [history, setHistory] = useState([initialState]);
 
   const setState = (action, override = false) => {
-    // action could be a 1)current state or 2)function
-    // 1) setState(items) 2) setState(prevState => prevState)
     const newState =
       typeof action === "function" ? action(history[index]) : action;
     if (override) {
@@ -226,7 +220,7 @@ const useHistory = (initialState) => {
   return [history[index], setState, undo, redo];
 };
 
-// Function from the library
+// function from library
 function getSvgPathFromStroke(stroke) {
   if (!stroke.length) return "";
 
@@ -343,8 +337,6 @@ function Test() {
           setSelectedElement({ ...element, offsetX, offsetY });
         }
 
-        // Added the below line because when we use selection, history is not created, only its last element is overrided.
-        // So to create a new entry in history we use setElements whichis actually the setState method of useHistory.
         setElements((prevState) => prevState);
 
         if (element.position === positionType.inside) {
@@ -360,7 +352,6 @@ function Test() {
       tool === elementType.text
     ) {
       const id = elements.length;
-      // First entry will be like element at its place...like a dot
       const element = createElement(
         id,
         clientX,
@@ -507,8 +498,8 @@ function Test() {
       }
     }
 
-    // if we are writing, we dont want to reset action to none
-    // We will set action to none by using onblurr function
+    // when writing, we dont want to reset action to none
+    // set action to none by using onblur function
     if (action === actionType.writing) return;
 
     setAction("none");
@@ -538,11 +529,13 @@ function Test() {
 
     // save the image from the new canvas
     const link = document.createElement("a");
-    link.download = "drawing.png";
+    link.download = "wireframe.png";
     link.href = newCanvas.toDataURL();
     link.click();
   }
 
+
+  // html and canvas
 
   return (
 
