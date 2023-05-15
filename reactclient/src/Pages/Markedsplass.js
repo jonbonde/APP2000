@@ -52,7 +52,7 @@ export default function Markedsplass() {
 
               <div className="mt-5">
                 <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
-                  Få innleggene fra server
+                  Se alle innlegg
                 </button>
                 <button
                   onClick={() => setShowingCreateNewPostForm(true)}
@@ -77,8 +77,8 @@ export default function Markedsplass() {
   function renderPostsTable() {
     return (
       <div className="table-responsive mt-5">
-        <table className="table table-bordered border-dark">
-          <thead>
+        <table className="table table-bordered border-white">
+          <thead className="text-white">
             <tr>
               <th scope="col">PostId (PK)</th>
               <th scope="col">Title</th>
@@ -86,7 +86,7 @@ export default function Markedsplass() {
               <th scope="col">CRUD OPerations</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-white">
             {posts.map((post) => (
               <tr key={post.postId}>
                 <th scope="row">{post.postId}</th>
