@@ -274,9 +274,9 @@
   cursor: pointer;
   z-index: 10;
   background-color: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border: 2px solid black;
+  border-radius: 25%;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  /* border: 2px solid black; */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -286,14 +286,14 @@
 
 .bar {
   width: 25px;
-  height: 3px;
+  height: 2px;
   background-color: #000000;
   margin: 4px auto;
   transition: transform 0.3s ease-in-out;
 }
 
 .open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(7px, 7px);
 }
 
 .open .bar:nth-child(2) {
@@ -301,7 +301,7 @@
 }
 
 .open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Valgene som kommer opp */
@@ -312,27 +312,38 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  align-items:center;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
   padding: 10px;
   z-index: 9;
-  border: 2px solid black;
+  /* border: 2px solid white;*/
+  border-radius: 5px;
 }
 
 .menu-options a {
   display: block;
   margin: 5px 0;
   padding: 5px 10px;
-  color: #333;
+  background: #fff;
+  color: #e91779;
+  text-align: center;
+  justify-content:center;
+  align-content:center;
+  padding:10px;
+  width: 10em;
   text-decoration: none;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
+  border-radius: 100px;
 }
 
 .menu-options a:hover {
-  background-color: #78787b;
+  background-color: #c9c9c9;
+
 }
 
+ul {
+  list-style-type: none;
+}
 /* Placeholder bakgrunn */
 
 .background {
@@ -538,4 +549,18 @@
 
 .font-face-kr {
   font-family: "KirvyRegular";
+}
+
+.header-title{
+  padding-top: 3vh;
+  font-size: 60px;
+  font-family: "KirvyRegular";
+  text-align: center;
+  background-color: #fff;
+  width: 100%;
+  background: rgb(233,23,121);
+  background: linear-gradient(130deg, rgba(233,23,121,1) 30%, rgba(36,77,209,1) 70%); 
+  background-clip: text;
+  color:transparent;
+  text-decoration: none;
 }

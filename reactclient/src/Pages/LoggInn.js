@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Registrer from "./Registrer";
 import Constants from "../Utilities/Constants";
 import AuthServices from "../Utilities/AuthServices";
+import "../Utilities/LIStyle.css";
 
 export default function LoggInn() {
     const [showingRegistrerForm, setShowingRegistrerForm] = useState(false);
@@ -23,7 +24,7 @@ export default function LoggInn() {
     
 
     return (
-        <div className="container">
+        <div className="LoggInnContainer">
             {showingRegistrerForm === false && (
                 <div>
                     <h1>APP2000 Prosjekt</h1>

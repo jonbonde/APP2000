@@ -1,0 +1,87 @@
+.input{
+ color: white;
+ padding: 5px;
+}
+
+.navbarRight{
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 17vw;
+  font-size: 20pt;
+  background-color: #232323;
+  padding: 15px;
+  box-sizing: border-box;
+  bottom: 0px;
+  text-indent: 15px;
+}
+
+.navbarBottom h2 {
+  color: #fff;
+  padding:0;
+}
+
+.navbarBottom{
+    display:flex;
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+    background-color: #232323;
+    box-sizing: border-box;
+    bottom: 0px;
+    padding: 15px;
+    justify-content: left;
+    align-items: center;
+    padding-left: 2vw;
+}
+
+.button-container {
+    margin-top: 20px;
+  }
+  
+  .navbarBottom li {
+    display: inline-block;
+    margin: 0 10px;
+
+  }
+
+  
+  /* Add this style to your navbar buttons */
+  .navbarBottom button {
+    display: flex;
+    background-color: white;
+    margin: 5px;
+    color: #e91779;
+    font-size: 20px;
+    padding: 1em;
+    text-align:center;
+    justify-content: center;
+    width: 10em;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    border:none;
+
+  }
+  
+  .navbarBottom button:hover {
+    background-color: #c9c9c9;
+    color: #e91779;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+/*.navbarBottom button {
+
+}
+
+.clearButton{
+    
+}
+
+.saveButton{
+
+}
+*/

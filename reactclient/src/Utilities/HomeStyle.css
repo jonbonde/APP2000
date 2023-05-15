@@ -1,16 +1,36 @@
-.header-title {
+.header-title{
     padding-top: 3vh;
     font-size: 60px;
     font-family: "KirvyRegular";
     text-align: center;
+    background-color: #fff;
     width: 100%;
     background: rgb(233,23,121);
     background: linear-gradient(130deg, rgba(233,23,121,1) 30%, rgba(36,77,209,1) 70%); 
     background-clip: text;
     color:transparent;
+    text-decoration: none;
+}
+
+ 
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
 
 .textbox-container {
+    pointer-events: none;
     display:flex;
     position:relative;
     justify-content: center;
@@ -45,4 +65,7 @@
     position:relative;
     align-items: center;
     justify-content: center;
+}
+ul {
+    list-style-type: none;
 }

@@ -13,15 +13,17 @@ function NewHome() {
 
     return (
         <motion.div className='main' style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' , backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-            <header>
+                <header>
+                <Link to="/">
                 <motion.div 
-                className='header-container'
-                >
+                className='header-container'>
                     <h1 className='header-title'>
-                        Nettside AS
+                            Nettside AS
                     </h1>
                 </motion.div>
+                </Link>
             </header>
+
 
             <motion.section className='about-text'>
             <motion.div

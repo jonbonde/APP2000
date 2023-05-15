@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "perfect-freehand": "^1.2.0",
     "react-icons": "^4.8.0",
     "react-motion": "^0.5.2",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "roughjs": "^4.5.2"
   }
 }
