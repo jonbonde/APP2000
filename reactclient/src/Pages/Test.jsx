@@ -617,18 +617,11 @@ function Test() {
         <nav className="navbarBottom">
         <h2
           style={{
-            margin: "10px auto",
-            textAlign: "center",
-            borderBottom: "2px solid white",
-            paddingBottom: "10px",
-            width: "100%",
             color: "white",
           }}
         >Options</h2>
-
-
-        <ul>
-
+        <div className="knappene">
+          <ul>
           <li>
             <button className="redoUndoButton" onClick={() => redo()}>Redo (Ctrl + Y)
             </button>
@@ -648,12 +641,12 @@ function Test() {
             <button className="saveButton" onClick={handleSaveImage}>Save
             </button>
           </li>
-
         </ul>
-
+        </div>
+        
         </nav>
       </div>
-
+      
 
       <canvas className=""
         id="canvas"
@@ -662,7 +655,9 @@ function Test() {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-        style={{ border: "5px solid black" }}
+        style={{ 
+          border: "5px solid black" 
+        }}
       >
         Canvas
       </canvas>

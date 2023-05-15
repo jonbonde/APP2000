@@ -9,7 +9,10 @@ function Home() {
                 <motion.div 
                 className='header-container'>
                     <h1 className='header-title'>
-                        Nettside AS
+                        <a href="www.google.com">
+                            Nettside AS
+                        </a>
+                        
                     </h1>
                 </motion.div>
                 <motion.div 
