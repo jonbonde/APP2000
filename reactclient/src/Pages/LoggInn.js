@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Registrer from "./Registrer";
 import Constants from "../Utilities/Constants";
+import AuthServices from "../Utilities/AuthServices";
 
 export default function LoggInn() {
     const [showingRegistrerForm, setShowingRegistrerForm] = useState(false);
@@ -19,30 +20,7 @@ export default function LoggInn() {
         });
     };
 
-    const [bruker, setBruker] = useState("");
-
-    function loggInn() {
-        const brukernavn = formData.brukernavn;
-        const passord = formData.passord;
-
-        const url = `${Constants.API_URL_LOGG_INN}`;
-
-        fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify()
-        })
-            .then((response) => response.json())
-            .then((brukerFromServer) => {
-                setBruker(brukerFromServer);
-            })
-            .catch((error) => {
-                console.log(error);
-                alert(error);
-            });
-    }
+    
 
     return (
         <div className="container">
