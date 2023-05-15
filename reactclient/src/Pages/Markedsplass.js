@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Constants from "../Utilities/Constants";
 import LagInnlegg from "./LagInnlegg";
 import OppdaterInnlegg from "./OppdaterInnlegg";
+import "../Utilities/MPStyle.css";
 
 export default function Markedsplass() {
   const [posts, setPosts] = useState({});
@@ -42,12 +43,12 @@ export default function Markedsplass() {
   }
 
   return (
-    <div className="container">
+    <div className="InnleggContainer">
       <div className="row min-vh-100">
         <div className="col d-flex flex-column justify-content-center align-items-center">
           {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
             <div>
-              <h1>APP2000 Prosjekt</h1>
+              <h1 className="title">APP2000 Prosjekt</h1>
 
               <div className="mt-5">
                 <button onClick={getPosts} className="btn btn-dark btn-lg w-100">

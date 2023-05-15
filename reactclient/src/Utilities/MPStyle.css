@@ -1,0 +1,32 @@
+.InnleggContainer {
+    background-color: #333;
+}
+
+@font-face {
+    font-family: "KirvyRegular";
+    src: local("KirvyRegular"),
+      url("../Fonts/Kirvy/Kirvy-Regular.otf") format("opentype");
+  }
+  
+  .font-face-kr {
+    font-family: "KirvyRegular";
+  }
+
+.row {
+    color: #fff;
+}
+
+.title {
+    color: #fff;
+    font-family: "KirvyRegular";
+}
+
+.container {
+    background-color: #333;
+    font-family: "KirvyRegular";
+    color: #fff;
+    max-width: 100vw;
+    max-height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
