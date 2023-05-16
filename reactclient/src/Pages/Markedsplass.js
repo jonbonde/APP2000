@@ -48,17 +48,17 @@ export default function Markedsplass() {
         <div className="col d-flex flex-column justify-content-center align-items-center">
           {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
             <div>
-              <h1 className="title">APP2000 Prosjekt</h1>
+              <h1 className="title">APP2000 Project</h1>
 
               <div className="mt-5">
                 <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
-                  Se alle innlegg
+                  See all commissions
                 </button>
                 <button
                   onClick={() => setShowingCreateNewPostForm(true)}
                   className="btn btn-secondary btn-lg w-100 mt-4"
                 >
-                  Lag nytt innlegg
+                  Create commission
                 </button>
               </div>
             </div>

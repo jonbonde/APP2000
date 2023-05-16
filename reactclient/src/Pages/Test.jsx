@@ -656,7 +656,8 @@ function Test() {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         style={{ 
-          border: "5px solid black" 
+          border: "5px solid black",
+          backgroundColor: "white"
         }}
       >
         Canvas

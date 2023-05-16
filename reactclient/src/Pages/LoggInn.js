@@ -3,14 +3,15 @@ import Registrer from "./Registrer";
 import Constants from "../Utilities/Constants";
 import AuthServices from "../Utilities/AuthServices";
 import "../Utilities/LIStyle.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { color, motion, useScroll, useTransform } from 'framer-motion';
 
 export default function LoggInn() {
     const [showingRegistrerForm, setShowingRegistrerForm] = useState(false);
     const nav = useNavigate();
 
     const initialFormData = Object.freeze({
-        brukernavn: "Brukernavn",
+        brukernavn: "Username",
         passord: "******"
     });
 
@@ -66,26 +67,93 @@ export default function LoggInn() {
         <div className="LoggInnContainer">
             {showingRegistrerForm === false && (
                 <div>
-                    <h1>APP2000 Prosjekt</h1>
+                    <header>
+                        <Link to="/">
+                            <motion.div 
+                                className='header-container'>
+                                <h1 className='header-title'>
+                                    Nettside AS
+                                </h1>
+                            </motion.div>
+                        </Link>
+                    </header>
 
-                    <h2>Logg inn</h2>
+                    <h3>Log in</h3>
 
                     <div className="mt-3">
-                        <label className="h3 form-label">Brukernavn</label>
+                        <label className="h3 form-label">Username</label>
                         <input value={formData.brukernavn} name="brukernavn" type="text" className="form-control" onChange={handleChange} />
                     </div>
 
                     <div className="mt-3">
-                        <label className="h3 form-label">Passord</label>
+                        <label className="h3 form-label">Password</label>
                         <input value={formData.passord} name="passord" type="password" className="form-control" onChange={handleChange} />
                     </div>
 
-                    <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Logg inn</button>
+                    {/* <button onClick={handleSubmit} className="btn btn-secondary btn-lg w-100 mt-5">Log in</button>
                     <button
                         onClick={() => setShowingRegistrerForm(true)}
-                        className="btn btn-secondary btn-lg w-100 mt-3">
-                        Har du ikke bruker? Registrer deg her
-                    </button>
+                        className="btn btn-secondary btn-lg w-100 mt-4">
+                        Not an existing user? Register here!
+                    </button> */}
+                    <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        style={{
+                            // backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)"
+                            // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
+                            /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
+                        }}
+                        onClick={handleSubmit}
+                        className="button button1" >
+                            Log in
+                    </motion.a>
+                    <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        style={{
+                            // backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)"
+                            // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
+                            /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
+                        }}
+                        onClick={() => setShowingRegistrerForm(true)}
+                        className="button button2" >
+                            Create account
+                    </motion.a>
                     <div id="feilmelding"></div>
                 </div>
             )}
@@ -99,7 +167,7 @@ export default function LoggInn() {
             return
         }
 
-        alert('Registrering vellykket');
+        alert('Registration successful');
         setShowingRegistrerForm(false);
     }
 }
