@@ -72,13 +72,10 @@ export default function LagInnlegg(props) {
 
             
             <div className="mt-4">
-<<<<<<< HEAD
-                <label className="h3 form-label">Last opp bilde</label>
-                <input value={formData.bilde} name="bilde" type="file" className="form-control" accept="image/jpeg, image/png, image/jpg, image/webp" onChange={handleChange} />
-=======
+                {/* <label className="h3 form-label">Last opp bilde</label>
+                <input value={formData.bilde} name="bilde" type="file" className="form-control" accept="image/jpeg, image/png, image/jpg, image/webp" onChange={handleChange} /> */}
                 <label className="h3 form-label">Upload a picture</label>
-                <input value={formData.bilde} name="bilde" type="file" className="form-control" onChange={handleChange} />
->>>>>>> 4d28c4f3abcdf4046ae35eb30ae6180f6bc9bca9
+                <input value={formData.bilde} name="bilde" type="file" className="form-control" accept="image/jpeg, image/png, image/jpg, image/webp" onChange={handleChange} />
             </div>
             <div className="submitReset">
             <motion.a
