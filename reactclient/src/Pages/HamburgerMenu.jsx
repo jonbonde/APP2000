@@ -20,15 +20,15 @@ function HamburgerMenu() {
           <ul >
             <li><motion.div 
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
-              ><Link to="/">Forside</Link></motion.div>
+              ><Link to="/">Home</Link></motion.div>
             </li>
             <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
-              ><Link to="/LoggInn">Logg inn</Link></motion.div>
+              ><Link to="/LoggInn">Log in</Link></motion.div>
             </li>
             <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
-              ><Link to="/Markedsplass">Markedsplass</Link></motion.div>
+              ><Link to="/Markedsplass">Marketplace</Link></motion.div>
             </li>
             {/* <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}

@@ -429,6 +429,7 @@ ul {
   font-size: 18px;
   margin-bottom: 10px;
   text-align: center;
+  
 }
 
 .textbox-container p {
@@ -441,6 +442,19 @@ ul {
   padding-right: 300px;
   padding-bottom: 150px;
   text-align: center;
+}
+
+.bottom-text-container p {
+  font-size: 25px;
+  font-family: "KirvyRegular";
+  margin-left: 20px 0;
+  margin-right: 20px 0;
+  padding-top: 150px;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 150px;
+  text-align: center;
+  text-shadow: 0px 0px 4px black;
 }
 
 .bottom-text {
@@ -551,16 +565,26 @@ ul {
   font-family: "KirvyRegular";
 }
 
+@font-face {
+  font-family: "KirvyBold";
+  src: local("KirvyBold"),
+    url("../Fonts/Kirvy/Kirvy-Bold.otf") format("opentype");
+}
+
+.font-face-kb {
+  font-family: "KirvyBold";
+}
+
 .header-title{
   padding-top: 3vh;
   font-size: 60px;
-  font-family: "KirvyRegular";
+  font-family: "KirvyBold";
   text-align: center;
   background-color: #fff;
   width: 100%;
   background: rgb(233,23,121);
   background: linear-gradient(130deg, rgba(233,23,121,1) 30%, rgba(36,77,209,1) 70%); 
-  background-clip: text;
-  color:transparent;
+  background-clip: text;  paint-order: stroke fill;
+  color: transparent;
   text-decoration: none;
 }
