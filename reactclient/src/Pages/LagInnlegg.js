@@ -17,6 +17,8 @@ export default function LagInnlegg(props) {
         });
     };
 
+    const nyBilde = "..\\Utilities\\Bilder" + formData.bilde.slice(11);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -24,7 +26,7 @@ export default function LagInnlegg(props) {
             postId: 0,
             title: formData.title,
             content: formData.content,
-            bilde: formData.bilde
+            bilde: nyBilde
         };
 
         const url = Constants.API_URL_CREATE_POST;
@@ -64,7 +66,7 @@ export default function LagInnlegg(props) {
 
             <div className="mt-4">
                 <label className="h3 form-label">Last opp bilde</label>
-                <input value={formData.bilde} name="bilde" type="file" className="form-control" onChange={handleChange} />
+                <input value={formData.bilde} name="bilde" type="file" className="form-control" accept="image/jpeg, image/png, image/jpg, image/webp" onChange={handleChange} />
             </div>
 
             <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>
