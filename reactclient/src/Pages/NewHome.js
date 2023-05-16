@@ -45,7 +45,8 @@ function NewHome() {
                 }}
                 className='textbox-container'>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. </p>
+                        Welcome to a new and exciting website dedicated to help local businesses and aspiring entrepreneurs achieve their goals. Nettside AS is an up and coming new site that is trying to create a tool that can help and coordinate different actors and their future development. Within this website you can make use of our tools to generate posts and create better visual aid for how you would like your website to appear and behave. Please bear in mind that this is a fairly new website and many elements are therefore subject to changes and some kinks need to be worked out, but we believe that the core uses and functions will still be a tremendous help for the ongoing aspirations of small businesses and newcomers towards the task of creating a website.
+                    </p>
                 </motion.div>
             </motion.section>
             <motion.section className='knappediv' style={{ y }}>
@@ -83,7 +84,7 @@ function NewHome() {
                             /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
                         }}
                         href="Markedsplass" className="button button1" >
-                            Markedsplass
+                            Marketplace
                     </motion.a>
                     <motion.a
                         initial={{
@@ -115,8 +116,8 @@ function NewHome() {
                         whileTap={{
                             scale:0.9
                         }}
-                        href="#" className="button button2">
-                            Lag Anbud
+                        href="LoggInn" className="button button2">
+                            Log in
                     </motion.a>
                 </div>
             </motion.section>
@@ -138,9 +139,10 @@ function NewHome() {
                     stiffness:87,
                     damping:15.5,
                 }}
-                className='textbox-container'>
+                className='bottom-text-container'>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. </p>
+                        To get started you will need a user which can be registered and activated by pressing the log in button. When you have created and logged in to a user you can start creating your first commission listing for you new website. This website is achieved through the combined efforts of Ruben With Persen, Thomas Terjesen, Jonas Dankertsen, Andreas Jøsendal, Robin Bruun and Jonathan Sveinhaug Hoffmann. We sincerely hope you enjoy and share this website with your friends and family.
+                    </p>
                 </motion.div>
             </motion.section>
         </motion.div>

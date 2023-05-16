@@ -1,4 +1,4 @@
-.header-title{
+/*.header-title{
     padding-top: 3vh;
     font-size: 60px;
     font-family: "KirvyRegular";
@@ -11,9 +11,7 @@
     color:transparent;
     text-decoration: none;
 }
-
- 
-
+*/
 a:link {
     text-decoration: none;
 }
@@ -42,6 +40,19 @@ a:active {
     margin:auto;
 }
 
+.bottom-text-container {
+    pointer-events: none;
+    display:flex;
+    position:relative;
+    justify-content: center;
+    align-content:center;
+    color: white;
+    text-align: center;
+    padding-top: 10vh;
+    max-width: 100rm;
+    margin:auto;
+}
+
 .knappediv {
     background-color: #21212123;
     height:20vh;
@@ -56,6 +67,7 @@ a:active {
 .button1 {
     height:auto;
     position:relative;
+    width: 12rem;
     align-items: center;
     justify-content: center;
 }
@@ -63,9 +75,11 @@ a:active {
 .button2 {
     height:auto;
     position:relative;
+    width: 12rem;
     align-items: center;
     justify-content: center;
 }
+
 ul {
     list-style-type: none;
 }
