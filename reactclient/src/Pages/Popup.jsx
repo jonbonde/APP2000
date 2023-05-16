@@ -23,9 +23,9 @@ function Popup() {
           className="popup-content">
             <h2>Design your custom webpage!</h2>
             <p>Choose from the multiple options that are provided.</p>
-            <button onClick={closePopup} className="popup-close-button">
+            <a onClick={closePopup} className="popup-close-button">
              Got it!
-            </button>
+            </a>
           </div>
         </div>
       )}

@@ -4,6 +4,7 @@ import { getStroke } from "perfect-freehand";
 import { motion } from "framer-motion";
 import "./Test.css";
 import Popup from "./Popup";
+import { Link } from "react-router-dom";
 
 const generator = rough.generator();
 
@@ -35,6 +36,7 @@ const actionType = {
   resizing: "resizing",
   deleteIt: "deleteIt",
 };
+
 
 // Creates and returns element
 function createElement(id, x1, y1, x2, y2, type) {
@@ -677,7 +679,16 @@ function Test() {
           }} />
         : null
       }
-
+          {/* <header>
+                <Link to="/">
+                <motion.div 
+                className='header-container'>
+                    <h1 className='header-title'>
+                            Nettside AS
+                    </h1>
+                </motion.div>
+                </Link>
+            </header> */}
       <canvas className=""
         id="canvas"
         width={1500}

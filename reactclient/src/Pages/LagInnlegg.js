@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Constants from "../Utilities/Constants";
+import { motion } from "framer-motion";
 
 export default function LagInnlegg(props) {
     const initialFormData = Object.freeze({
-        title: "Innlegg x",
-        content: "Dette er innlegg x og inneholder en kul beskrivelse",
+        placeholder: "",
+        content: "",
         bilde: ""
     });
 
@@ -49,26 +50,83 @@ export default function LagInnlegg(props) {
     };
 
     return (
-        <form className="w-100 px-5">
-            <h1 className="mt-5">Lag nytt innlegg</h1>
+        <form className="skjema">
+            <h1 className="skjemaTitle">Create new commission</h1>
 
             <div className="mt-5">
-                <label className="h3 form-label">Tittel</label>
-                <input value={formData.title} name="title" type="text" className="form-control" onChange={handleChange} />
+                <label className="h3 form-label">Title</label>
+                <input value={formData.title} name="title" type="text" className="form-control" placeholder="Commission title" onChange={handleChange}/>
             </div>
 
-            <div className="mt-4">
+            {/* <div className="mt-4 ">
                 <label className="h3 form-label">Beskrivelse</label>
-                <input value={formData.content} name="content" type="text" className="form-control" onChange={handleChange} />
+                <input value={formData.content} name="content" type="text" className="form-control" rows="3" onChange={handleChange} />
+            </div> */}
+
+            <div className="mt-4 ">
+                <label className="h3 form-label">Description</label>
+                <textarea value={formData.content} name="content" type="text" className="form-control" placeholder="Give some details on how you want your website to look and feel" rows="3" onChange={handleChange} />
             </div>
 
+            
             <div className="mt-4">
-                <label className="h3 form-label">Last opp bilde</label>
+                <label className="h3 form-label">Upload a picture</label>
                 <input value={formData.bilde} name="bilde" type="file" className="form-control" onChange={handleChange} />
             </div>
-
-            <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>
-            <button onClick={() => props.onPostCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button>
+            <div className="submitReset">
+            <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        
+                        onClick={handleSubmit}
+                        className="button button1" >
+                            Submit
+                    </motion.a>
+                    <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        
+                        onClick={() => props.onPostCreated(null)}
+                        className="button button1" >
+                            Reset forms
+                    </motion.a>
+                    </div>
+            {/* <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>
+            <button onClick={() => props.onPostCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button> */}
         </form>
     );
 }
