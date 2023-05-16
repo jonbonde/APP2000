@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LagInnlegg(props) {
     const initialFormData = Object.freeze({
-        placeholder: "",
+        title: "",
         content: "",
         bilde: ""
     });
