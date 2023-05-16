@@ -3,6 +3,8 @@ import Constants from "../Utilities/Constants";
 import LagInnlegg from "./LagInnlegg";
 import OppdaterInnlegg from "./OppdaterInnlegg";
 import "../Utilities/MPStyle.css";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Markedsplass() {
   const [posts, setPosts] = useState({});
@@ -44,22 +46,81 @@ export default function Markedsplass() {
 
   return (
     <div className="InnleggContainer">
-      <div className="row min-vh-100">
-        <div className="col d-flex flex-column justify-content-center align-items-center">
+      <div className="">
+        <div className="">
           {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
             <div>
-              <h1 className="title">APP2000 Project</h1>
+              <header>
+                <Link to="/">
+                <motion.div 
+                className='header-container'>
+                    <h1 className='header-title'>
+                            Nettside AS
+                    </h1>
+                </motion.div>
+                </Link>
+            </header>
 
-              <div className="mt-5">
-                <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
+              <div className="knappene">
+                {/* <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
                   See all commissions
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   onClick={() => setShowingCreateNewPostForm(true)}
                   className="btn btn-secondary btn-lg w-100 mt-4"
                 >
                   Create commission
-                </button>
+                </button> */}
+                <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        
+                        onClick={getPosts}
+                        className="button button1" >
+                            See all commissions
+                    </motion.a>
+                    <motion.a
+                        initial={{
+                            color:"white",
+                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                        }}
+                        transition={{
+                            type:"spring",
+                            stiffness:87,
+                            damping:15.5,
+                        }}
+                        
+                        whileHover={{
+                            //scale:1.02,
+                            borderRadius:"100px",
+                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                            color:"#e91779"
+                        }}
+                        whileTap={{
+                            scale:0.9
+                        }}
+                        
+                        onClick={() => setShowingCreateNewPostForm(true)}
+                        className="button button2" >
+                            Create commission
+                    </motion.a>
               </div>
             </div>
           )}
@@ -83,7 +144,7 @@ export default function Markedsplass() {
               <th scope="col">PostId (PK)</th>
               <th scope="col">Title</th>
               <th scope="col">Content</th>
-              <th scope="col">CRUD OPerations</th>
+              <th scope="col">CRUD Operations</th>
             </tr>
           </thead>
           <tbody className="text-white">

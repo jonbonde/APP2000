@@ -4,6 +4,7 @@ import { getStroke } from "perfect-freehand";
 import { motion } from "framer-motion";
 import "./Test.css";
 import Popup from "./Popup";
+import { Link } from "react-router-dom";
 
 const generator = rough.generator();
 
@@ -35,6 +36,7 @@ const actionType = {
   resizing: "resizing",
   deleteIt: "deleteIt",
 };
+
 
 // Creates and returns element
 function createElement(id, x1, y1, x2, y2, type) {
@@ -600,6 +602,16 @@ function Test() {
 
           <li className="input">
             <input
+          type="radio"
+          id="text" 
+          checked={tool === "text"}
+          onChange={() => setTool("text")}
+          />
+        <label htmlFor="text">Text</label>
+          </li>
+
+          <li className="input">
+            <input
               type="radio"
               id="deleteIt"
               checked={tool === "deleteIt"}
@@ -646,8 +658,37 @@ function Test() {
         
         </nav>
       </div>
-      
-
+      {
+        action === actionType.writing ? 
+        <textarea
+          ref={textAreaRef} 
+          onBlur={handleBlur}
+          style={{ 
+            position: "fixed", 
+            top: selectedElement.y1, 
+            left: selectedElement.x1,
+            font: "24px sans-serif",
+            margin: 0,
+            padding: 0,
+            border: 0,
+            outline: 0,
+            resize: "auto",
+            overflow: "hidden",
+            whitespace: "pre",
+            background: "transparent"
+          }} />
+        : null
+      }
+          {/* <header>
+                <Link to="/">
+                <motion.div 
+                className='header-container'>
+                    <h1 className='header-title'>
+                            Nettside AS
+                    </h1>
+                </motion.div>
+                </Link>
+            </header> */}
       <canvas className=""
         id="canvas"
         width={1500}
@@ -657,7 +698,7 @@ function Test() {
         onMouseUp={handleMouseUp}
         style={{ 
           border: "5px solid black",
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         Canvas

@@ -11,8 +11,8 @@ export default function LoggInn() {
     const nav = useNavigate();
 
     const initialFormData = Object.freeze({
-        brukernavn: "Username",
-        passord: "******"
+        brukernavn: "",
+        passord: ""
     });
 
     const [formData, setFormData] = useState(initialFormData);
@@ -82,12 +82,12 @@ export default function LoggInn() {
 
                     <div className="mt-3">
                         <label className="h3 form-label">Username</label>
-                        <input value={formData.brukernavn} name="brukernavn" type="text" className="form-control" onChange={handleChange} />
+                        <input value={formData.brukernavn} name="brukernavn" type="text" className="form-control" placeholder="Username" onChange={handleChange} />
                     </div>
 
                     <div className="mt-3">
                         <label className="h3 form-label">Password</label>
-                        <input value={formData.passord} name="passord" type="password" className="form-control" onChange={handleChange} />
+                        <input value={formData.passord} name="passord" type="password" className="form-control" placeholder="●●●●●●●●" onChange={handleChange} />
                     </div>
 
                     {/* <button onClick={handleSubmit} className="btn btn-secondary btn-lg w-100 mt-5">Log in</button>
@@ -116,11 +116,6 @@ export default function LoggInn() {
                         whileTap={{
                             scale:0.9
                         }}
-                        style={{
-                            // backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)"
-                            // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
-                            /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
-                        }}
                         onClick={handleSubmit}
                         className="button button1" >
                             Log in
@@ -144,11 +139,6 @@ export default function LoggInn() {
                         }}
                         whileTap={{
                             scale:0.9
-                        }}
-                        style={{
-                            // backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)"
-                            // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
-                            /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
                         }}
                         onClick={() => setShowingRegistrerForm(true)}
                         className="button button2" >

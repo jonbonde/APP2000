@@ -1,5 +1,7 @@
 .InnleggContainer {
-    background-color: #333;
+    background-color: #232323;
+    display: flex;
+    justify-content: center;
 }
 
 @font-face {
@@ -26,7 +28,7 @@ body {
 }
 
 .container {
-    background-color: #333;
+    background-color: #232323;
     font-family: "KirvyRegular";
     color: #fff;
     max-width: 100%;
@@ -34,4 +36,37 @@ body {
     overflow-x: hidden;
     justify-items: center;
     align-items: center;
+}
+
+.knappene a{
+    display: flex;
+    grid-column:auto;
+    width: 20em;
+}
+
+.skjema {
+ width: 50em;
+}
+
+.form-control {
+    overflow: wrap;
+    
+}
+
+.skjemaTitle {
+    margin-top: 1em;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.submitReset {
+    margin-top: 2em;
+    display:flex;
+    align-content:center;
+    justify-content: center;
+}
+
+.submitReset a {
+    width:20em;
 }

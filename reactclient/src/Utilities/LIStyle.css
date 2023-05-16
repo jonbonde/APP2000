@@ -9,6 +9,18 @@
     justify-content: center;
 }
 
+.RegistrerContainer h1, h3, h2 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.RegistrerContainer h1, h3, h2 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 body {
     background-color: #232323;
     color: white;
