@@ -4,7 +4,8 @@ import Constants from "../Utilities/Constants";
 export default function LagInnlegg(props) {
     const initialFormData = Object.freeze({
         title: "Innlegg x",
-        content: "Dette er innlegg x og inneholder en kul beskrivelse"
+        content: "Dette er innlegg x og inneholder en kul beskrivelse",
+        bilde: ""
     });
 
     const [formData, setFormData] = useState(initialFormData);
@@ -22,7 +23,8 @@ export default function LagInnlegg(props) {
         const postToCreate = {
             postId: 0,
             title: formData.title,
-            content: formData.content
+            content: formData.content,
+            bilde: formData.bilde
         };
 
         const url = Constants.API_URL_CREATE_POST;
@@ -58,6 +60,11 @@ export default function LagInnlegg(props) {
             <div className="mt-4">
                 <label className="h3 form-label">Beskrivelse</label>
                 <input value={formData.content} name="content" type="text" className="form-control" onChange={handleChange} />
+            </div>
+
+            <div className="mt-4">
+                <label className="h3 form-label">Last opp bilde</label>
+                <input value={formData.bilde} name="bilde" type="file" className="form-control" onChange={handleChange} />
             </div>
 
             <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>

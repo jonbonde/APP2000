@@ -15,5 +15,9 @@ namespace app2000.Data
         [MaxLength(100000000)]
 
         public string Content { get; set; } = string.Empty;
+
+        [MaxLength(100)]
+
+        public string Bilde { get; set; } = string.Empty;
     }
 }

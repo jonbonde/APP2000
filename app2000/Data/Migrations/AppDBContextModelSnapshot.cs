@@ -39,7 +39,7 @@ namespace app2000.Data.Migrations
 
                     b.HasKey("BrukerId");
 
-                    b.ToTable("Brukere");
+                    b.ToTable("Brukere", (string)null);
 
                     b.HasData(
                         new
@@ -104,7 +104,7 @@ namespace app2000.Data.Migrations
 
                     b.HasKey("PostId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Posts", (string)null);
 
                     b.HasData(
                         new

@@ -20,7 +20,8 @@ namespace app2000.Data
                 {
                     PostId = i,
                     Title = $"Innlegg {i}",
-                    Content = $"Dette er innlegg {i} som trenger å få laget en nettside"
+                    Content = $"Dette er innlegg {i} som trenger å få laget en nettside",
+                    Bilde = $"Bilde {i}.png"
                 };
 
                 brukerToSeed[i - 1] = new Bruker
