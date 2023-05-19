@@ -68,7 +68,7 @@ export default function LoggInn(props) {
                 </Link>
             </header>
 
-            <h2>Register user</h2>
+            <h2>Create account</h2>
             <div className="mt-3">
                 <label className="h3 form-label">Email</label>
                 <input value={formData.epost} name="epost" type="text" className="form-control" placeholder="email@mail.com" onChange={handleChange} />
@@ -107,7 +107,7 @@ export default function LoggInn(props) {
                         }}
                         onClick={handleSubmit}
                         className="button button1" >
-                            Register
+                            Create account
                     </motion.a>
             {/* <button onClick={refreshPage} className="btn btn-secondary btn-lg w-100 mt-3">Tilbake til logg inn</button> */}
             <motion.a
