@@ -659,6 +659,14 @@ function Test() {
             <button className="saveButton" onClick={handleSaveImage}>Save
             </button>
           </li>
+
+          <li>
+            <Link to="/LagInnlegg">
+            <button className="saveButton">Create commission
+            </button>
+            </Link>
+          </li>
+
         </ul>
         </div>
         

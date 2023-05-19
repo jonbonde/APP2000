@@ -127,4 +127,18 @@ app.MapPost("/logg-inn", async (SignInRequest request) =>
     }
 }).WithTags("Brukere Endpoints");
 
+app.MapPost("/upload-bilde", async (Bilde bilde) =>
+{
+    bool uploadSuccessful = await BildeRepository.UploadBilde(bilde);
+
+    if (uploadSuccessful)
+    {
+        return Results.Ok("Upload successful");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Bilde Endpoints");
+
 app.Run();

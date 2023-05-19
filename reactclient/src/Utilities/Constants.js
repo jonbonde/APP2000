@@ -8,7 +8,9 @@ const ENDPOINTS = {
     DELETE_POST_BY_ID: 'delete-post-by-id',
 
     CREATE_BRUKER: 'create-bruker',
-    LOGG_INN: 'logg-inn'
+    LOGG_INN: 'logg-inn',
+
+    UPLOAD_BILDE: 'upload-bilde'
 };
 
 const development = {
@@ -19,7 +21,9 @@ const development = {
     API_URL_DELETE_POST_BY_ID: `${API_BASE_URL_DEVELOPMENT}/${ENDPOINTS.DELETE_POST_BY_ID}`,
 
     API_URL_CREATE_BRUKER: `${API_BASE_URL_DEVELOPMENT}/${ENDPOINTS.CREATE_BRUKER}`,
-    API_URL_LOGG_INN: `${API_BASE_URL_DEVELOPMENT}/${ENDPOINTS.LOGG_INN}`
+    API_URL_LOGG_INN: `${API_BASE_URL_DEVELOPMENT}/${ENDPOINTS.LOGG_INN}`,
+
+    API_URL_UPLOAD_BILDE: `${API_BASE_URL_DEVELOPMENT}/${ENDPOINTS.UPLOAD_BILDE}`
 };
 
 const production = {};
