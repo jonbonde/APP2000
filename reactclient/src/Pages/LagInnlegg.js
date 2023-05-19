@@ -30,7 +30,30 @@ export default function LagInnlegg(props) {
             bilde: nyBilde
         };
 
+        const bildeToCreate = {
+            bildeNavn: nyBilde,
+            file: formData.bilde
+        }
+
         const url = Constants.API_URL_CREATE_POST;
+        const bildeUrl = Constants.API_URL_UPLOAD_BILDE;
+
+        fetch(bildeUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bildeToCreate)
+        })
+            .then((response) => response.json())
+            .then((responseFromServer) => {
+                console.log(responseFromServer);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+                console.log(bildeToCreate);
+            });
 
         fetch(url, {
             method: "POST",

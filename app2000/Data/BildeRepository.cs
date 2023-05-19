@@ -1,47 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.IO;
+using System.IO.Pipelines;
 
 namespace app2000.Data
 {
     internal static class BildeRepository
     {
-        internal async static Task<bool> UploadBilde(Bilde bilde)
+        [HttpPost]
+        internal async static Task<bool> UploadBilde([FromForm] Bilde bilde)
         {
-            string path = Path.Combine(@"..\..\reactclient\src\Utilities\Bilder", bilde.BildeNavn);
-            using (Stream stream = new FileStream(path, FileMode.Create))
+            try
             {
-                try
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "bilder", bilde.BildeNavn);
+
+                using (Stream stream = new FileStream(path, FileMode.Create))
                 {
-                    bilde.file.CopyTo(stream);
+                    await bilde.file.CopyToAsync(stream);
 
                     return true;
                 }
-                catch (Exception e)
-                {
-                    return false;
-                }
+            }
+            catch (Exception ex) 
+            {
+                return false;
             }
         }
-        /* internal static Response UploadBilde([FromForm] Bilde bilde)
-        {
-            Response response = new Response();
-            try
-            {
-                string path = Path.Combine(@"..\..\reactclient\src\Utilities\Bilder", bilde.BildeNavn);
-                using (Stream stream = new FileStream(path, FileMode.Create))
-                {
-                    bilde.file.CopyTo(stream);
-                }
-                response.StatusCode = 200;
-                response.StatusMessage = "Image created successfully";
-            }
-            catch (Exception ex)
-            {
-                response.StatusCode = 100;
-                response.StatusMessage = ex.Message;
-            }
-
-            return response;
-        } */
     }
 }

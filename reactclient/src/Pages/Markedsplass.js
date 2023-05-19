@@ -52,14 +52,14 @@ export default function Markedsplass() {
             <div>
               <header>
                 <Link to="/">
-                <motion.div 
-                className='header-container'>
+                  <motion.div
+                    className='header-container'>
                     <h1 className='header-title'>
-                            Nettside AS
+                      Nettside AS
                     </h1>
-                </motion.div>
+                  </motion.div>
                 </Link>
-            </header>
+              </header>
 
               <div className="knappene">
                 {/* <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
@@ -72,55 +72,55 @@ export default function Markedsplass() {
                   Create commission
                 </button> */}
                 <motion.a
-                        initial={{
-                            color:"white",
-                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
-                        }}
-                        transition={{
-                            type:"spring",
-                            stiffness:87,
-                            damping:15.5,
-                        }}
-                        
-                        whileHover={{
-                            //scale:1.02,
-                            borderRadius:"100px",
-                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
-                            color:"#e91779"
-                        }}
-                        whileTap={{
-                            scale:0.9
-                        }}
-                        
-                        onClick={getPosts}
-                        className="button button1" >
-                            See all commissions
-                    </motion.a>
-                    <motion.a
-                        initial={{
-                            color:"white",
-                            backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
-                        }}
-                        transition={{
-                            type:"spring",
-                            stiffness:87,
-                            damping:15.5,
-                        }}
-                        
-                        whileHover={{
-                            //scale:1.02,
-                            borderRadius:"100px",
-                            backgroundImage: "linear-gradient(130deg, #fff, #fff)",
-                            color:"#e91779"
-                        }}
-                        whileTap={{
-                            scale:0.9
-                        }}
-                        
-                        onClick={() => setShowingCreateNewPostForm(true)}
-                        className="button button2" >
-                            Create commission
-                    </motion.a>
+                  initial={{
+                    color: "white",
+                    backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 87,
+                    damping: 15.5,
+                  }}
+
+                  whileHover={{
+                    //scale:1.02,
+                    borderRadius: "100px",
+                    backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                    color: "#e91779"
+                  }}
+                  whileTap={{
+                    scale: 0.9
+                  }}
+
+                  onClick={getPosts}
+                  className="button button1" >
+                  See all commissions
+                </motion.a>
+                <motion.a
+                  initial={{
+                    color: "white",
+                    backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 87,
+                    damping: 15.5,
+                  }}
+
+                  whileHover={{
+                    //scale:1.02,
+                    borderRadius: "100px",
+                    backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                    color: "#e91779"
+                  }}
+                  whileTap={{
+                    scale: 0.9
+                  }}
+
+                  onClick={() => setShowingCreateNewPostForm(true)}
+                  className="button button2" >
+                  Create commission
+                </motion.a>
               </div>
             </div>
           )}
@@ -137,31 +137,20 @@ export default function Markedsplass() {
 
   function renderPostsTable() {
     return (
-      <div className="table-responsive mt-5">
-        <table className="table table-bordered border-white">
-          <thead className="text-white">
-            <tr>
-              <th scope="col">PostId (PK)</th>
-              <th scope="col">Title</th>
-              <th scope="col">Content</th>
-              <th scope="col">CRUD Operations</th>
-            </tr>
-          </thead>
-          <tbody className="text-white">
-            {posts.map((post) => (
-              <tr key={post.postId}>
-                <th scope="row">{post.postId}</th>
-                <td>{post.title}</td>
-                <td>{post.content}</td>
-                <td>
-                  <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>
-                  <button onClick={() => { if (window.confirm(`Er du sikker på at du ønsker å slette innlegget "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg mx-3">Slett</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
+      <div>
+        {posts.map((post) => (
+          <div className="card text-dark mt-3 w-75">
+            <div className="">
+              <img src="https://i1.sndcdn.com/artworks-zG1URTOoswJnvml0-52iEXg-t500x500.jpg" className="card-img-top" alt="..." />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">{post.title}</h5>
+              <p className="card-text">{post.content}</p>
+              <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>
+              <button onClick={() => { if (window.confirm(`Er du sikker på at du ønsker å slette innlegget "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg mx-3">Slett</button>
+            </div>
+          </div>
+        ))}
         <button onClick={() => setPosts([])} className="btn btn-dark btn-lg w-100">Tøm innlegg array</button>
       </div>
     );
