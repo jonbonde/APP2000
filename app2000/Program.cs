@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Jonathan var her
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CORSPolicy", 
