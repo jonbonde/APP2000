@@ -661,8 +661,8 @@ function Test() {
           </li>
 
           <li>
-            <Link to="/LagInnlegg">
-            <button className="saveButton">Create commission
+            <Link to="/CreateCommission">
+            <button className="redoUndoButton">Create commission
             </button>
             </Link>
           </li>
