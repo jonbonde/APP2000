@@ -529,11 +529,17 @@ function Test() {
     // draw the contents of the original canvas onto the new canvas
     context.drawImage(canvas, 0, 0);
 
-    // save the image from the new canvas
+    const counter = parseInt(localStorage.getItem("imageCounter")) || 1;
+    const fileName = `wireframe${counter}.png`;
+
+    // save the image from the new canvas with the generated filename
     const link = document.createElement("a");
-    link.download = "wireframe.png";
+    link.download = fileName;
     link.href = newCanvas.toDataURL();
     link.click();
+
+    // increment the counter and store it in localStorage
+    localStorage.setItem("imageCounter", counter + 1);
   }
 
 
