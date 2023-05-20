@@ -12,6 +12,14 @@
     text-decoration: none;
 }
 */
+
+.loggedIn {
+    position: fixed;
+    margin: -100;
+    justify-content: left;
+    align-content: left;
+}
+
 a:link {
     text-decoration: none;
 }

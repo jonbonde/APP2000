@@ -6,10 +6,17 @@ import { vAutoAnimate  } from '@formkit/auto-animate'
 
 function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const loggetInn = window.localStorage.getItem("loggetInn");
 
   function handleClick() {
     setIsOpen(!isOpen);
   }
+
+  function logOut() {
+    window.localStorage.removeItem("loggetInn");
+    window.localStorage.removeItem("navn");
+  }
+
   return (
     <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={handleClick} enableAnimations>
       <div className="bar"></div>
@@ -22,10 +29,12 @@ function HamburgerMenu() {
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
               ><Link to="/">Home</Link></motion.div>
             </li>
-            <li><motion.div
+
+            {!loggetInn && <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
               ><Link to="/LoggInn">Log in</Link></motion.div>
-            </li>
+            </li>}
+
             <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
               ><Link to="/Markedsplass">Marketplace</Link></motion.div>
@@ -36,9 +45,13 @@ function HamburgerMenu() {
             </li> */}
             <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
-              ><Link to="/Test">Wireframe Tool</Link></motion.div>
+              ><Link to="/CreateCommission">Create commission</Link></motion.div>
             </li>
             
+            {loggetInn && <li><motion.div
+              whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
+              ><Link onClick={logOut} to="/">Log out</Link></motion.div>
+            </li>}
             {/* <li><motion.div
               whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => null}
               ><Link to="/WFTest">Test</Link></motion.div>

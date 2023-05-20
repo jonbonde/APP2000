@@ -6,6 +6,7 @@ import "../Utilities/LIStyle.css";
 import { Link, useNavigate } from "react-router-dom";
 import { color, motion, useScroll, useTransform } from 'framer-motion';
 import Markedsplass from "./Markedsplass";
+import CreateCommission from "./CreateCommission";
 
 export default function LoggInn() {
     const [showingRegistrerForm, setShowingRegistrerForm] = useState(false);
@@ -51,8 +52,9 @@ export default function LoggInn() {
                 console.log(myJson);
                 for (let k in myJson) {
                     if (myJson[k] === true) {
+                        window.localStorage.setItem("loggetInn", true);
+                        window.localStorage.setItem("navn", formData.brukernavn);
                         setLogInSuccess(true);
-                        // nav("/Markedsplass");
                     } else {
                         feilmelding.innerHTML = "Wrong username or password";
                     }
@@ -85,7 +87,7 @@ export default function LoggInn() {
 
                     <div className="mt-3">
                         <label className="h3 form-label">Username</label>
-                        <input value={formData.brukernavn} name="brukernavn" type="text" className="form-control" placeholder="Username" onChange={handleChange} />
+                        <input value={formData.brukernavn} name="brukernavn" id="navn" type="text" className="form-control" placeholder="Username" onChange={handleChange} />
                     </div>
 
                     <div className="mt-3">
@@ -146,7 +148,7 @@ export default function LoggInn() {
             )}
 
             {showingRegistrerForm && <Registrer onBrukerCreated={onBrukerCreated} />}
-            {logInSuccess && <Markedsplass isSuccess={true} />}
+            {logInSuccess && <Markedsplass isSuccess={true} navn={formData.brukernavn} />}
         </div>
     );
 
