@@ -5,10 +5,12 @@ import AuthServices from "../Utilities/AuthServices";
 import "../Utilities/LIStyle.css";
 import { Link, useNavigate } from "react-router-dom";
 import { color, motion, useScroll, useTransform } from 'framer-motion';
+import Markedsplass from "./Markedsplass";
 
 export default function LoggInn() {
     const [showingRegistrerForm, setShowingRegistrerForm] = useState(false);
     const nav = useNavigate();
+    const [logInSuccess, setLogInSuccess] = useState(false);
 
     const initialFormData = Object.freeze({
         brukernavn: "",
@@ -49,9 +51,10 @@ export default function LoggInn() {
                 console.log(myJson);
                 for (let k in myJson) {
                     if (myJson[k] === true) {
-                        nav("/Markedsplass");
+                        setLogInSuccess(true);
+                        // nav("/Markedsplass");
                     } else {
-                        feilmelding.innerHTML = "Feil brukernavn eller passord";
+                        feilmelding.innerHTML = "Wrong username or password";
                     }
                 }
             })
@@ -65,7 +68,7 @@ export default function LoggInn() {
 
     return (
         <div className="LoggInnContainer">
-            {showingRegistrerForm === false && (
+            {(showingRegistrerForm === false && logInSuccess === false) && (
                 <div>
                     <header>
                         <Link to="/">
@@ -90,12 +93,6 @@ export default function LoggInn() {
                         <input value={formData.passord} name="passord" type="password" className="form-control" placeholder="●●●●●●●●" onChange={handleChange} />
                     </div>
 
-                    {/* <button onClick={handleSubmit} className="btn btn-secondary btn-lg w-100 mt-5">Log in</button>
-                    <button
-                        onClick={() => setShowingRegistrerForm(true)}
-                        className="btn btn-secondary btn-lg w-100 mt-4">
-                        Not an existing user? Register here!
-                    </button> */}
                     <motion.a
                         initial={{
                             color:"white",
@@ -149,6 +146,7 @@ export default function LoggInn() {
             )}
 
             {showingRegistrerForm && <Registrer onBrukerCreated={onBrukerCreated} />}
+            {logInSuccess && <Markedsplass isSuccess={true} />}
         </div>
     );
 

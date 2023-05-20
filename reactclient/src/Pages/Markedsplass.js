@@ -6,10 +6,11 @@ import "../Utilities/MPStyle.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export default function Markedsplass() {
+export default function Markedsplass({ isSuccess }) {
   const [posts, setPosts] = useState({});
   const [showingCreateNewPostForm, setShowingCreateNewPostForm] = useState(false);
   const [postCurrentlyBeingUpdated, setPostCurrentlyBeingUpdated] = useState(null);
+  console.log(isSuccess);
 
   function getPosts() {
     const url = Constants.API_URL_GET_ALL_POSTS;
@@ -127,7 +128,7 @@ export default function Markedsplass() {
 
           {(posts.length > 0 && showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && renderPostsTable()}
 
-          {showingCreateNewPostForm && <LagInnlegg onPostCreated={onPostCreated} />}
+          {(showingCreateNewPostForm && isSuccess) && <LagInnlegg onPostCreated={onPostCreated} />}
 
           {postCurrentlyBeingUpdated !== null && <OppdaterInnlegg post={postCurrentlyBeingUpdated} onPostUpdated={onPostUpdated} />}
         </div>
