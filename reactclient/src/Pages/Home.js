@@ -87,7 +87,7 @@ function NewHome() {
                                 // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
                                 /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
                             }}
-                            >
+                            className="button button2">
                             <Link to="/Markedsplass">Marketplace</Link>
                         </motion.div>
                         <motion.div
