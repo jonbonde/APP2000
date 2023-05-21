@@ -56,7 +56,7 @@ function NewHome() {
                 <motion.section className='knappediv' style={{ y }}>
                     <div
                         className='button-container'>
-                        <motion.div
+                        <motion.button
                             initial={{
                                 opacity: 0,
                                 translateX: "-100vh",
@@ -89,8 +89,8 @@ function NewHome() {
                             }}
                             className="button button2 text-white">
                             <Link to="/Markedsplass">Marketplace</Link>
-                        </motion.div>
-                        <motion.div
+                        </motion.button>
+                        <motion.button
                             initial={{
                                 opacity: 0,
                                 translateX: "-100vh",
@@ -122,7 +122,7 @@ function NewHome() {
                             }}
                             className="button button2 text-white">
                             <Link to="/LoggInn">Log in</Link>
-                        </motion.div>
+                        </motion.button>
                     </div>
                 </motion.section>
                 <motion.section className='about-text' style={{
