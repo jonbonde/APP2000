@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
 namespace app2000.Data
@@ -9,7 +10,7 @@ namespace app2000.Data
         {
             using (var db = new AppDBContext())
             {
-                return await db.Posts.ToListAsync();
+                return await db.Posts.OrderByDescending(p => p.PostId).ToListAsync();
             }
         }
 

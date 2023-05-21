@@ -524,6 +524,9 @@ ul {
   cursor: pointer;
 }
 
+.button:hover {
+  color: #e91779;
+}
 /* .button1, 
 .button2 {
   background-color: #4169E1;

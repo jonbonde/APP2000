@@ -61,8 +61,8 @@ function NewHome() {
                                 opacity: 0,
                                 translateX: "-100vh",
                                 scale: 1,
-                                color: "white",
-                                /*backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",*/
+                                color: "#FFF",
+                                backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
                             }}
                             transition={{
                                 type: "spring",
@@ -76,7 +76,7 @@ function NewHome() {
                             whileHover={{
                                 //scale:1.02,
                                 borderRadius: "100px",
-                                backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                                backgroundImage: "linear-gradient(130deg, #232323, #232323)",
                                 color: "#e91779"
                             }}
                             whileTap={{
@@ -88,14 +88,14 @@ function NewHome() {
                                 /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
                             }}
                             className="button button2 text-white">
-                            <Link to="/Markedsplass">Marketplace</Link>
+                            <Link to="/Markedsplass" style={{color: "#fff"}}>Marketplace</Link>
                         </motion.button>
                         <motion.button
                             initial={{
                                 opacity: 0,
                                 translateX: "-100vh",
                                 scale: 1,
-                                color: "white",
+                                color: "#FFF",
                                 backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
                             }}
                             whileClick={{
@@ -109,7 +109,7 @@ function NewHome() {
                             whileHover={{
                                 //scale:1.02,
                                 borderRadius: "100px",
-                                backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                                backgroundImage: "linear-gradient(130deg, #232323, #232323)",
                                 color: "#e91779"
 
                             }}
@@ -121,7 +121,7 @@ function NewHome() {
                                 scale: 0.9
                             }}
                             className="button button2 text-white">
-                            <Link to="/LoggInn">Log in</Link>
+                            <Link to="/LoggInn" style={{color: "#fff"}}>Log in</Link>
                         </motion.button>
                     </div>
                 </motion.section>

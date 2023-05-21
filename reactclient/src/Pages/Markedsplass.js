@@ -130,7 +130,7 @@ export default function Markedsplass() {
 
             {(posts.length > 0 && showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && renderPostsTable()}
 
-            {(showingCreateNewPostForm && loggetInn) && <LagInnlegg onPostCreated={onPostCreated} />}
+            {showingCreateNewPostForm && <LagInnlegg onPostCreated={onPostCreated} />}
 
             {postCurrentlyBeingUpdated !== null && <OppdaterInnlegg post={postCurrentlyBeingUpdated} onPostUpdated={onPostUpdated} />}
           </div>
