@@ -55,7 +55,7 @@ function NewHome() {
                 </motion.section>
                 <motion.section className='knappediv' style={{ y }}>
                     <div
-                        className='button-container'>
+                        className='button-container text-white'>
                         <motion.button
                             initial={{
                                 opacity: 0,
