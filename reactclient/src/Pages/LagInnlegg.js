@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Constants from "../Utilities/Constants";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function LagInnlegg(props) {
     const navn = window.localStorage.getItem("navn");
@@ -77,6 +78,17 @@ export default function LagInnlegg(props) {
     };
 
     return (
+        <div>
+            <header>
+                    <Link to="/">
+                        <motion.div
+                            className='header-container'>
+                            <h1 className='header-title'>
+                                Nettside AS
+                            </h1>
+                        </motion.div>
+                    </Link>
+                </header>
         <form className="skjema">
             <h1 className="skjemaTitle">Create new commission</h1>
 
@@ -185,5 +197,6 @@ export default function LagInnlegg(props) {
             {/* <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>
             <button onClick={() => props.onPostCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button> */}
         </form>
+        </div>
     );
 }
