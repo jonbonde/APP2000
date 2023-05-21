@@ -62,7 +62,7 @@ function NewHome() {
                                 translateX: "-100vh",
                                 scale: 1,
                                 color: "white",
-                                backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                                /*backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",*/
                             }}
                             transition={{
                                 type: "spring",
