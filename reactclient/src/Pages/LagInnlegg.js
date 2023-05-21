@@ -168,7 +168,7 @@ export default function LagInnlegg(props) {
                 </motion.a>
             </div>
             <div className="toWireframe">
-                <motion.a
+                <motion.div
                     initial={{
                         color: "white",
                         backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
@@ -189,10 +189,9 @@ export default function LagInnlegg(props) {
                         scale: 0.9
                     }}
 
-                    href="/Test"
                     className="bigButton button1" >
-                    Create a wireframe
-                </motion.a>
+                    <Link to="/Test">Create a wireframe</Link>
+                </motion.div>
             </div>
             {/* <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>
             <button onClick={() => props.onPostCreated(null)} className="btn btn-secondary btn-lg w-100 mt-3">Nullstill</button> */}

@@ -56,7 +56,7 @@ function NewHome() {
                 <motion.section className='knappediv' style={{ y }}>
                     <div
                         className='button-container'>
-                        <motion.a
+                        <motion.div
                             initial={{
                                 opacity: 0,
                                 translateX: "-100vh",
@@ -87,10 +87,10 @@ function NewHome() {
                                 // linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)
                                 /* linear-gradient(130deg, rgb(233, 23, 121) 0%, rgb(36, 77, 209) 85%)*/
                             }}
-                            href="Markedsplass" className="button button1" >
-                            Marketplace
-                        </motion.a>
-                        <motion.a
+                            >
+                            <Link to="/Markedsplass">Marketplace</Link>
+                        </motion.div>
+                        <motion.div
                             initial={{
                                 opacity: 0,
                                 translateX: "-100vh",
@@ -120,9 +120,9 @@ function NewHome() {
                             whileTap={{
                                 scale: 0.9
                             }}
-                            href="LoggInn" className="button button2">
-                            Log in
-                        </motion.a>
+                            className="button button2">
+                            <Link to="/LoggInn">Log in</Link>
+                        </motion.div>
                     </div>
                 </motion.section>
                 <motion.section className='about-text' style={{
