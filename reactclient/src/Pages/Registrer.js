@@ -110,7 +110,7 @@ export default function LoggInn(props) {
                             Create account
                     </motion.a>
             {/* <button onClick={refreshPage} className="btn btn-secondary btn-lg w-100 mt-3">Tilbake til logg inn</button> */}
-            <motion.p
+            <Link to="/Home"><motion.p
                         initial={{
                             color:"white",
                             backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
@@ -130,10 +130,9 @@ export default function LoggInn(props) {
                         whileTap={{
                             scale:0.9
                         }}
-                        onClick={refreshPage}
                         className="button button2" >
                             Back
-                    </motion.p>
+                    </motion.p></Link>
         </div>
     );
 }
