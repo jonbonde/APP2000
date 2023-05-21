@@ -147,7 +147,7 @@ export default function Markedsplass() {
             <div className="">
               <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640" className="card-img-top" alt="..." />
             </div>
-            <div className="card-body">
+            <div className="card-body" style={{maxWidth: "30rem"}}>
               <h5 className="card-title">{post.title}</h5>
               <p className="card-text">{post.content}</p>
               {navn === post.brukerNavn && <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>}
