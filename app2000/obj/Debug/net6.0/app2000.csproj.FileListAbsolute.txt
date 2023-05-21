@@ -238,3 +238,6 @@ C:\Users\hippo\Desktop\APP2000\APP2000\app2000\obj\Debug\net6.0\refint\app2000.d
 C:\Users\hippo\Desktop\APP2000\APP2000\app2000\obj\Debug\net6.0\app2000.pdb
 C:\Users\hippo\Desktop\APP2000\APP2000\app2000\obj\Debug\net6.0\app2000.genruntimeconfig.cache
 C:\Users\hippo\Desktop\APP2000\APP2000\app2000\obj\Debug\net6.0\ref\app2000.dll
+C:\Users\jhdan\repositories\APP2000\app2000\bin\Debug\net6.0\Data\AppDB.db
+C:\Users\jhdan\repositories\APP2000\app2000\bin\Debug\net6.0\Data\AppDB.db-shm
+C:\Users\jhdan\repositories\APP2000\app2000\bin\Debug\net6.0\Data\AppDB.db-wal

@@ -1,3 +1,6 @@
+C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db
+C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db-shm
+C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db-wal
 C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\app2000.exe
 C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\appsettings.Development.json
 C:\Users\jhdan\repositories\APP2000\app2000\obj\Release\net6.0\win-x86\PubTmp\Out\appsettings.json
