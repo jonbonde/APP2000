@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
             builder
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .WithOrigins("http://localhost:3000", "https://appname.azurestaticapps.net");
+            .WithOrigins("http://localhost:3000", "https://green-mushroom-076af7c03.3.azurestaticapps.net");
         });
 });
 
