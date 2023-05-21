@@ -19,5 +19,10 @@ namespace app2000.Data
         [MaxLength(100)]
 
         public string Bilde { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength (100)]
+
+        public string BrukerNavn { get; set;} = string.Empty;
     }
 }

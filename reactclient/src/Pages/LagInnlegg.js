@@ -3,6 +3,7 @@ import Constants from "../Utilities/Constants";
 import { motion } from "framer-motion";
 
 export default function LagInnlegg(props) {
+    const navn = window.localStorage.getItem("navn");
     const initialFormData = Object.freeze({
         title: "",
         content: "",
@@ -27,7 +28,8 @@ export default function LagInnlegg(props) {
             postId: 0,
             title: formData.title,
             content: formData.content,
-            bilde: nyBilde
+            bilde: nyBilde,
+            brukerNavn: navn
         };
 
         const bildeToCreate = {
@@ -80,7 +82,7 @@ export default function LagInnlegg(props) {
 
             <div className="mt-5">
                 <label className="h3 form-label">Title</label>
-                <input value={formData.title} name="title" type="text" className="form-control" placeholder="Commission title" onChange={handleChange} />
+                <input value={formData.title} name="title" type="text" className="form-control" placeholder="Commission title" onChange={handleChange} required />
             </div>
 
             {/* <div className="mt-4 ">
@@ -90,7 +92,7 @@ export default function LagInnlegg(props) {
 
             <div className="mt-4 ">
                 <label className="h3 form-label">Description</label>
-                <textarea value={formData.content} name="content" type="text" className="form-control" placeholder="Give some details on how you want your website to look and feel" rows="3" onChange={handleChange} />
+                <textarea value={formData.content} name="content" type="text" className="form-control" placeholder="Give some details on how you want your website to look and feel" rows="3" onChange={handleChange} required />
             </div>
 
 
