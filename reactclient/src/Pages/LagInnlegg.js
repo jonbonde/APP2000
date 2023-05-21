@@ -100,33 +100,7 @@ export default function LagInnlegg(props) {
                 <label className="h3 form-label">Upload a picture</label>
                 <input value={formData.bilde} name="bilde" type="file" className="form-control" accept="image/jpeg, image/png, image/jpg, image/webp" onChange={handleChange} />
             </div>
-            <div className="toWireframe">
-                <motion.a
-                    initial={{
-                        color: "white",
-                        backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 87,
-                        damping: 15.5,
-                    }}
-
-                    whileHover={{
-                        //scale:1.02,
-                        borderRadius: "100px",
-                        backgroundImage: "linear-gradient(130deg, #fff, #fff)",
-                        color: "#e91779"
-                    }}
-                    whileTap={{
-                        scale: 0.9
-                    }}
-
-                    href="/Test"
-                    className="bigButton button1" >
-                    Create a wireframe
-                </motion.a>
-            </div>
+            
             <div className="submitReset">
                 <motion.a
                     initial={{
@@ -177,6 +151,33 @@ export default function LagInnlegg(props) {
                     onClick={() => props.onPostCreated(null)}
                     className="resetButton" >
                     Reset forms
+                </motion.a>
+            </div>
+            <div className="toWireframe">
+                <motion.a
+                    initial={{
+                        color: "white",
+                        backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                    }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 87,
+                        damping: 15.5,
+                    }}
+
+                    whileHover={{
+                        //scale:1.02,
+                        borderRadius: "100px",
+                        backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                        color: "#e91779"
+                    }}
+                    whileTap={{
+                        scale: 0.9
+                    }}
+
+                    href="/Test"
+                    className="bigButton button1" >
+                    Create a wireframe
                 </motion.a>
             </div>
             {/* <button onClick={handleSubmit} className="btn btn-dark btn-lg w-100 mt-5">Send inn</button>

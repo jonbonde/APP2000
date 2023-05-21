@@ -1,10 +1,10 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState} from "react";
 import rough from "roughjs/bundled/rough.esm";
 import { getStroke } from "perfect-freehand";
 import { motion } from "framer-motion";
 import "./Test.css";
 import Popup from "./Popup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const generator = rough.generator();
 
@@ -27,6 +27,7 @@ const positionType = {
   start: "start",
   end: "end",
 };
+
 
 // actions
 const actionType = {
@@ -534,9 +535,11 @@ function Test() {
 
     // save the image from the new canvas with the generated filename
     const link = document.createElement("a");
+    
     link.download = fileName;
     link.href = newCanvas.toDataURL();
     link.click();
+    
 
     // increment the counter and store it in localStorage
     localStorage.setItem("imageCounter", counter + 1);
@@ -544,7 +547,11 @@ function Test() {
 
 
   // html and canvas
+  const navigate = useNavigate();
 
+  const goBack = () => {
+    navigate(-1);
+  }
   return (
 
     <div>
@@ -630,7 +637,6 @@ function Test() {
 
       </nav>
 
-
       <div>
         <nav className="navbarBottom">
         <h2
@@ -661,10 +667,8 @@ function Test() {
           </li>
 
           <li>
-            <Link to="/CreateCommission">
-            <button className="redoUndoButton">Create commission
+            <button className="redoUndoButton" onClick={goBack}>Create commission
             </button>
-            </Link>
           </li>
 
         </ul>
