@@ -145,7 +145,7 @@ export default function Markedsplass() {
         {posts.map((post) => (
           <div className="card text-dark mt-3 w-75">
             <div className="">
-              <img src="https://i1.sndcdn.com/artworks-zG1URTOoswJnvml0-52iEXg-t500x500.jpg" className="card-img-top" alt="..." />
+              <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640" className="card-img-top" alt="..." />
             </div>
             <div className="card-body">
               <h5 className="card-title">{post.title}</h5>
