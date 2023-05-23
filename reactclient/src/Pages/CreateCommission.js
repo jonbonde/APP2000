@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Constants from "../Utilities/Constants";
 import LagInnlegg from "./LagInnlegg";
 import OppdaterInnlegg from "./OppdaterInnlegg";
 import "../Utilities/MPStyle.css";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Markedsplass() {
   const [posts, setPosts] = useState({});
@@ -47,91 +47,93 @@ export default function Markedsplass() {
   }
 
   return (
-    <div className="InnleggContainer">
+    <div>
       {loggetInn && <div className="loggedIn fixed-top">You are logged in as {navn}</div>}
-      <div className="">
+      <div className="InnleggContainer">
         <div className="">
-          {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
-            <div>
-              <header>
-                <Link to="/">
-                  <motion.div
-                    className='header-container'>
-                    <h1 className='header-title'>
-                      Nettside AS
-                    </h1>
-                  </motion.div>
-                </Link>
-              </header>
-              <div className="knappene">
-                {/* <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
+          <div className="">
+            {(showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && (
+              <div>
+                <header>
+                  <Link to="/">
+                    <motion.div
+                      className='header-container'>
+                      <h1 className='header-title'>
+                        Nettside AS
+                      </h1>
+                    </motion.div>
+                  </Link>
+                </header>
+                <div className="knappene">
+                  {/* <button onClick={getPosts} className="btn btn-dark btn-lg w-100">
                   See all commissions
                 </button> */}
-                {/* <button
+                  {/* <button
                   onClick={() => setShowingCreateNewPostForm(true)}
                   className="btn btn-secondary btn-lg w-100 mt-4"
                 >
                   Create commission
                 </button> */}
-                <motion.a
-                  initial={{
-                    color: "white",
-                    backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 87,
-                    damping: 15.5,
-                  }}
+                  <motion.a
+                    initial={{
+                      color: "white",
+                      backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 87,
+                      damping: 15.5,
+                    }}
 
-                  whileHover={{
-                    //scale:1.02,
-                    borderRadius: "100px",
-                    backgroundImage: "linear-gradient(130deg, #fff, #fff)",
-                    color: "#e91779"
-                  }}
-                  whileTap={{
-                    scale: 0.9
-                  }}
+                    whileHover={{
+                      //scale:1.02,
+                      borderRadius: "100px",
+                      backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                      color: "#e91779"
+                    }}
+                    whileTap={{
+                      scale: 0.9
+                    }}
 
-                  onClick={getPosts}
-                  className="button button1" >
-                  See all commissions
-                </motion.a>
-                <motion.a
-                  initial={{
-                    color: "white",
-                    backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 87,
-                    damping: 15.5,
-                  }}
+                    onClick={getPosts}
+                    className="button button1" >
+                    See all commissions
+                  </motion.a>
+                  <motion.a
+                    initial={{
+                      color: "white",
+                      backgroundImage: "linear-gradient(130deg, #e91779, #244dd1)",
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 87,
+                      damping: 15.5,
+                    }}
 
-                  whileHover={{
-                    //scale:1.02,
-                    borderRadius: "100px",
-                    backgroundImage: "linear-gradient(130deg, #fff, #fff)",
-                    color: "#e91779"
-                  }}
-                  whileTap={{
-                    scale: 0.9
-                  }}
+                    whileHover={{
+                      //scale:1.02,
+                      borderRadius: "100px",
+                      backgroundImage: "linear-gradient(130deg, #fff, #fff)",
+                      color: "#e91779"
+                    }}
+                    whileTap={{
+                      scale: 0.9
+                    }}
 
-                  onClick={() => setShowingCreateNewPostForm(true)}
-                  className="button button2" >
-                  Create commission
-                </motion.a>
+                    onClick={() => setShowingCreateNewPostForm(true)}
+                    className="button button2" >
+                    Create commission
+                  </motion.a>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {(posts.length > 0 && showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && renderPostsTable()}
+            {(posts.length > 0 && showingCreateNewPostForm === false && postCurrentlyBeingUpdated === null) && renderPostsTable()}
 
-          {showingCreateNewPostForm && <LagInnlegg onPostCreated={onPostCreated} />}
+            {showingCreateNewPostForm && <LagInnlegg onPostCreated={onPostCreated} />}
 
-          {postCurrentlyBeingUpdated !== null && <OppdaterInnlegg post={postCurrentlyBeingUpdated} onPostUpdated={onPostUpdated} />}
+            {postCurrentlyBeingUpdated !== null && <OppdaterInnlegg post={postCurrentlyBeingUpdated} onPostUpdated={onPostUpdated} />}
+          </div>
         </div>
       </div>
     </div>
@@ -143,9 +145,9 @@ export default function Markedsplass() {
         {posts.map((post) => (
           <div className="card text-dark mt-3 w-75">
             <div className="">
-              <img src="https://i1.sndcdn.com/artworks-zG1URTOoswJnvml0-52iEXg-t500x500.jpg" className="card-img-top" alt="..." />
+              <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640" className="card-img-top" alt="..." />
             </div>
-            <div className="card-body">
+            <div className="card-body" style={{maxWidth: "30rem"}}>
               <h5 className="card-title">{post.title}</h5>
               <p className="card-text">{post.content}</p>
               {navn === post.brukerNavn && <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Oppdater</button>}
